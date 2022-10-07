@@ -87,8 +87,12 @@ export default function Home() {
         <Top>
           <animated.div style={sloganContainerVisibleAnimation}>
             <SloganContainer>
-              <SloganText>Slogan Text</SloganText>
-              <SloganSubtext>Slogan Subtext</SloganSubtext>
+              <SloganText>
+                Enjoy.
+                <br />
+                Be colorful.
+              </SloganText>
+              <SloganSubtext>우리의 일상을 더욱 다채롭게</SloganSubtext>
             </SloganContainer>
           </animated.div>
           <animated.div style={mainImageVisibleAnimation}>
@@ -178,15 +182,13 @@ export default function Home() {
                   name="김철수"
                   engName="Charles Kim"
                   position="CEO"
-                  description=<p>
-                    - 1 <br />- 2 <br />- 3
-                  </p>
+                  description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
                   path="0.png"
                   email="full.of.idea.1@gmail.com"
                   name="정진욱"
-                  engName="Jimmy Jeong"
+                  engName="Jarvis Jeong"
                   position="CEO"
                   description=<p>-고려대학교 전기전자 휴학</p>
                 />
@@ -199,9 +201,7 @@ export default function Home() {
                   description=<p>
                     -고려대학교 공대 재학
                     <br />
-                    -경기과학고 졸업
-                    <br />
-                    -정보올림피아드 수상
+                    -(前)HVCL 인턴
                   </p>
                 />
                 <PersonCard
@@ -231,7 +231,7 @@ export default function Home() {
                     <br />
                     -고려대학교 의공학교실 제작
                     <br />
-                    -(전)피플스헬스 FE직군
+                    -(前)피플스헬스 FE직군
                   </p>
                 />
                 <PersonCard
@@ -421,7 +421,7 @@ const MoreButton = styled.button`
   justify-content: center;
   align-items: center;
   &:hover {
-    box-shadow: 10px 10px 30px #4460ff30;
+    box-shadow: 5px 5px 30px #4460ff30;
   }
   @media screen and (max-width: 768px) {
     width: 80px;
