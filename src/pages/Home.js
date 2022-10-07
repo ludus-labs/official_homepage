@@ -20,7 +20,7 @@ export default function Home() {
 
   const sloganContainerVisibleAnimation = useSpring({
     config: { duration: 600 },
-    delay: 300,
+    delay: 0,
     to: {
       opacity: topInView ? 1 : 0,
       y: topInView ? 20 : 0,
@@ -28,7 +28,7 @@ export default function Home() {
   });
   const mainImageVisibleAnimation = useSpring({
     config: { duration: 800 },
-    delay: 300,
+    delay: 0,
     to: {
       opacity: topInView ? 1 : 0,
     },
@@ -75,7 +75,7 @@ export default function Home() {
   });
   const peopleVisibleAnimation = useSpring({
     config: { duration: 800 },
-    delay: 300,
+    delay: 0,
     to: {
       opacity: peopleInView ? 1 : 0,
     },
