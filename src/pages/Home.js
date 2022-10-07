@@ -162,7 +162,13 @@ export default function Home() {
                       고려대학교 공간정보 공유 커뮤니티
                     </ProductDescription>
                     <MoreButton>
-                      <MoreButtonText>다운로드</MoreButtonText>
+                      <MoreButtonText
+                        onClick={() => {
+                          window.open("https://kuplace.page.link/promotion");
+                        }}
+                      >
+                        다운로드
+                      </MoreButtonText>
                     </MoreButton>
                   </ProductTextContainer>
                 </ProductBoxLeft>
@@ -292,7 +298,7 @@ const SloganContainer = styled.div`
 const SloganText = styled.p`
   font-weight: 900;
   font-size: 60px;
-  line-height: 1.1;
+  line-height: 1.3;
   @media screen and (max-width: 768px) {
     font-size: 40px;
   }
@@ -302,7 +308,7 @@ const SloganSubtext = styled.p`
   font-size: 25px;
   color: #484848;
   margin-top: 5px;
-  line-height: 1;
+  line-height: 1.3;
   @media screen and (max-width: 768px) {
     font-size: 15px;
   }
