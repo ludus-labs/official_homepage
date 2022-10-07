@@ -231,7 +231,7 @@ export default function Home() {
                     <br />
                     -고려대학교 의공학교실 제작
                     <br />
-                    -(전)피플스헬스 FE직군
+                    -(前)피플스헬스 FE직군
                   </p>
                 />
                 <PersonCard
