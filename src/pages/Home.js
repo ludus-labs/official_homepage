@@ -140,6 +140,14 @@ export default function Home() {
                 </ProductBoxLeft>
               </ProductBoxLeftContainer>
             </animated.div>
+            <Waypoint
+              onEnter={() => {
+                setProductListInView(true);
+              }}
+              onLeave={() => {
+                setProductListInView(false);
+              }}
+            />
             <animated.div style={kuplaceVisibleAnimation}>
               <ProductBoxLeftContainer marginLeft={isMobile ? "-5px" : "60px"}>
                 <ProductIconLeft src={kuplace_icon} shadowColor="#7644FF80" />
@@ -158,14 +166,6 @@ export default function Home() {
             </animated.div>
           </ProductList>
         </ProductListContainer>
-        <Waypoint
-          onEnter={() => {
-            setProductListInView(true);
-          }}
-          onLeave={() => {
-            setProductListInView(false);
-          }}
-        />
 
         <animated.div style={peopleVisibleAnimation}>
           <PeopleContainer>
@@ -257,17 +257,17 @@ export default function Home() {
                   </p>
                 />
               </PersonBoxContainer>
+              <Waypoint
+                onEnter={() => {
+                  setPeopleInView(true);
+                }}
+                onLeave={() => {
+                  setPeopleInView(false);
+                }}
+              />
             </PersonBoxScroll>
           </PeopleContainer>
         </animated.div>
-        <Waypoint
-          onEnter={() => {
-            setPeopleInView(true);
-          }}
-          onLeave={() => {
-            setPeopleInView(false);
-          }}
-        />
       </Background>
     </>
   );
@@ -328,6 +328,7 @@ const ProductTopText = styled.p`
   color: black;
   text-align: center;
   @media screen and (max-width: 768px) {
+    margin-top: 100px;
     font-size: 30px;
   }
 `;
@@ -453,6 +454,7 @@ const PeopleContainer = styled.div`
   border-radius: 25px;
   background-color: #4460ff;
   @media screen and (max-width: 768px) {
+    margin-top: 100px;
     margin-left: 0;
     margin-right: 0;
   }
