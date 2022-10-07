@@ -283,17 +283,27 @@ const Background = styled.div`
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
+  @media screen and (max-width: 768px) {
+    padding-top: 20vh;
+  }
 `;
 const Top = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 const SloganContainer = styled.div`
   display: flex;
   margin-left: 10vw;
   flex-direction: column;
+  @media screen and (max-width: 768px) {
+    margin-left: 0;
+  }
 `;
 const SloganText = styled.p`
   font-weight: 900;
@@ -301,6 +311,7 @@ const SloganText = styled.p`
   line-height: 1.3;
   @media screen and (max-width: 768px) {
     font-size: 40px;
+    text-align: center;
   }
 `;
 const SloganSubtext = styled.p`
@@ -311,13 +322,16 @@ const SloganSubtext = styled.p`
   line-height: 1.3;
   @media screen and (max-width: 768px) {
     font-size: 15px;
+    text-align: center;
   }
 `;
 const MainImage = styled.img`
   margin-left: 30px;
   width: 300px;
   @media screen and (max-width: 768px) {
-    width: 170px;
+    margin-left: 10vw;
+    margin-top: 30px;
+    width: 200px;
   }
 `;
 const ProductTopText = styled.p`
