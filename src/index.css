@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+body {
+  margin: 0;
+  word-break: keep-all;
+  font-family: "Noto Sans KR", sans-serif;
+  min-height: 100%;
+}
+.selected {
+  font-weight: bold;
+  color: #cad3c8 !important;
+}
+.underline {
+  text-decoration: underline;
+  text-underline-position: under;
+}
+.color-nav {
+  background-color: #4460ff;
+  color: "white";
+}
+.heading {
+  font-family: "Noto Sans KR", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+}
+.sign {
+  /* font-family: "Monsieur La Doulaise"; */
+  font-family: "Monsieur La Doulaise", cursive;
+}
+.hamburger {
+  border-width: 0;
+}
