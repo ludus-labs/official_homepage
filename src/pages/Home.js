@@ -13,6 +13,7 @@ import PersonCard from "../components/PersonCard";
 export default function Home() {
   const [topInView, setTopInView] = useState(false);
   const [productListInView, setProductListInView] = useState(false);
+  const [peopleInView, setPeopleInView] = useState(false);
   const isMobile = useMediaQuery({
     query: "(max-width:768px)",
   });
@@ -70,6 +71,13 @@ export default function Home() {
     to: {
       opacity: productListInView ? 1 : 0,
       x: productListInView ? 0 : -20,
+    },
+  });
+  const peopleVisibleAnimation = useSpring({
+    config: { duration: 800 },
+    delay: 300,
+    to: {
+      opacity: peopleInView ? 1 : 0,
     },
   });
 
@@ -159,97 +167,107 @@ export default function Home() {
           }}
         />
 
-        <PeopleContainer>
-          <PeopleTitle>저희를 소개합니다</PeopleTitle>
-          <PersonBoxScroll>
-            <PersonBoxContainer>
-              <PersonCard
-                id="0"
-                email="@gmail.com"
-                name="김철수"
-                engName="Charles Kim"
-                position="CEO"
-                description=<p>
-                  - 1 <br />- 2 <br />- 3
-                </p>
-              />
-              <PersonCard
-                id="0"
-                email="full.of.idea.1@gmail.com"
-                name="정진욱"
-                engName="Jimmy Jeong"
-                position="CEO"
-                description=<p>-고려대학교 전기전자 휴학</p>
-              />
-              <PersonCard
-                id="0"
-                email="mintway0341@gmail.com"
-                name="강유민"
-                engName="Aiden Kang"
-                position="Co-founder"
-                description=<p>
-                  -고려대학교 공대 재학
-                  <br />
-                  -경기과학고 졸업
-                  <br />
-                  -정보올림피아드 수상
-                </p>
-              />
-              <PersonCard
-                id="0"
-                email="barkjun75@gmail.com"
-                name="박성준"
-                engName="Dominick Park"
-                position="Co-founder"
-                description=<p>-고려대학교 경영학과 재학</p>
-              />
-              <PersonCard
-                id="0"
-                email="pjhsarah@gmail.com"
-                name="박재현"
-                engName="Hazel Park"
-                position="Co-founder"
-                description=<p>
-                  - 1 <br />- 2 <br />- 3
-                </p>
-              />
-              <PersonCard
-                id="0"
-                email="alrbsshim14@gmail.com"
-                name="심하민"
-                engName="Zoe Shim"
-                position="Co-founder"
-                description=<p>
-                  -고려대학교 전기전자 재학
-                  <br />
-                  -고려대학교 의공학교실 제작
-                  <br />
-                  -(전)피플스헬스 FE직군
-                </p>
-              />
-              <PersonCard
-                id="0"
-                email="ghy200000@gmail.com"
-                name="윤재원"
-                engName="Jay Youn"
-                position="Co-founder"
-                description=<p>
-                  - 1 <br />- 2 <br />- 3
-                </p>
-              />
-              <PersonCard
-                id="0"
-                email="@gmail.com"
-                name="정채민"
-                engName="Brian Jeong"
-                position="Co-founder"
-                description=<p>
-                  - 1 <br />- 2 <br />- 3
-                </p>
-              />
-            </PersonBoxContainer>
-          </PersonBoxScroll>
-        </PeopleContainer>
+        <animated.div style={peopleVisibleAnimation}>
+          <PeopleContainer>
+            <PeopleTitle>저희를 소개합니다</PeopleTitle>
+            <PersonBoxScroll>
+              <PersonBoxContainer>
+                <PersonCard
+                  id="0"
+                  email="@gmail.com"
+                  name="김철수"
+                  engName="Charles Kim"
+                  position="CEO"
+                  description=<p>
+                    - 1 <br />- 2 <br />- 3
+                  </p>
+                />
+                <PersonCard
+                  id="0"
+                  email="full.of.idea.1@gmail.com"
+                  name="정진욱"
+                  engName="Jimmy Jeong"
+                  position="CEO"
+                  description=<p>-고려대학교 전기전자 휴학</p>
+                />
+                <PersonCard
+                  id="0"
+                  email="mintway0341@gmail.com"
+                  name="강유민"
+                  engName="Aiden Kang"
+                  position="Co-founder"
+                  description=<p>
+                    -고려대학교 공대 재학
+                    <br />
+                    -경기과학고 졸업
+                    <br />
+                    -정보올림피아드 수상
+                  </p>
+                />
+                <PersonCard
+                  id="0"
+                  email="barkjun75@gmail.com"
+                  name="박성준"
+                  engName="Dominick Park"
+                  position="Co-founder"
+                  description=<p>-고려대학교 경영학과 재학</p>
+                />
+                <PersonCard
+                  id="0"
+                  email="pjhsarah@gmail.com"
+                  name="박재현"
+                  engName="Hazel Park"
+                  position="Co-founder"
+                  description=<p>
+                    - 1 <br />- 2 <br />- 3
+                  </p>
+                />
+                <PersonCard
+                  id="0"
+                  email="alrbsshim14@gmail.com"
+                  name="심하민"
+                  engName="Zoe Shim"
+                  position="Co-founder"
+                  description=<p>
+                    -고려대학교 전기전자 재학
+                    <br />
+                    -고려대학교 의공학교실 제작
+                    <br />
+                    -(전)피플스헬스 FE직군
+                  </p>
+                />
+                <PersonCard
+                  id="0"
+                  email="ghy200000@gmail.com"
+                  name="윤재원"
+                  engName="Jay Youn"
+                  position="Co-founder"
+                  description=<p>
+                    - 1 <br />- 2 <br />- 3
+                  </p>
+                />
+                <PersonCard
+                  id="0"
+                  email="@gmail.com"
+                  name="정채민"
+                  engName="Brian Jeong"
+                  position="Co-founder"
+                  description=<p>
+                    - 1 <br />- 2 <br />- 3
+                  </p>
+                />
+              </PersonBoxContainer>
+            </PersonBoxScroll>
+          </PeopleContainer>
+        </animated.div>
+        <Waypoint
+          onEnter={() => {
+            setPeopleInView(true);
+          }}
+          onLeave={() => {
+            setPeopleInView(false);
+          }}
+        />
       </Background>
     </>
   );
@@ -257,6 +275,7 @@ export default function Home() {
 const Background = styled.div`
   width: 100vw;
   padding-top: 40vh;
+  padding-bottom: 20vh;
   padding-left: 10vw;
   padding-right: 10vw;
   background: #f6fafd;
@@ -428,7 +447,6 @@ const PeopleContainer = styled.div`
   flex-direction: column;
   height: fit-content;
   margin-top: 300px;
-  margin-bottom: 200px;
   margin-left: 10vw;
   margin-right: 10vw;
   padding-bottom: 10px;
