@@ -173,7 +173,7 @@ export default function Home() {
             <PersonBoxScroll>
               <PersonBoxContainer>
                 <PersonCard
-                  id="0"
+                  path="0.png"
                   email="@gmail.com"
                   name="김철수"
                   engName="Charles Kim"
@@ -183,7 +183,7 @@ export default function Home() {
                   </p>
                 />
                 <PersonCard
-                  id="0"
+                  path="0.png"
                   email="full.of.idea.1@gmail.com"
                   name="정진욱"
                   engName="Jimmy Jeong"
@@ -191,7 +191,7 @@ export default function Home() {
                   description=<p>-고려대학교 전기전자 휴학</p>
                 />
                 <PersonCard
-                  id="0"
+                  path="2.jpg"
                   email="mintway0341@gmail.com"
                   name="강유민"
                   engName="Aiden Kang"
@@ -205,7 +205,7 @@ export default function Home() {
                   </p>
                 />
                 <PersonCard
-                  id="0"
+                  path="3.jpg"
                   email="barkjun75@gmail.com"
                   name="박성준"
                   engName="Dominick Park"
@@ -213,17 +213,15 @@ export default function Home() {
                   description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
-                  id="0"
+                  path="0.png"
                   email="pjhsarah@gmail.com"
                   name="박재현"
                   engName="Hazel Park"
                   position="Co-founder"
-                  description=<p>
-                    - 1 <br />- 2 <br />- 3
-                  </p>
+                  description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
-                  id="0"
+                  path="5.jpg"
                   email="alrbsshim14@gmail.com"
                   name="심하민"
                   engName="Zoe Shim"
@@ -237,24 +235,20 @@ export default function Home() {
                   </p>
                 />
                 <PersonCard
-                  id="0"
+                  path="0.png"
                   email="ghy200000@gmail.com"
                   name="윤재원"
                   engName="Jay Youn"
                   position="Co-founder"
-                  description=<p>
-                    - 1 <br />- 2 <br />- 3
-                  </p>
+                  description=<p>-고려대학교 전기전자 재학</p>
                 />
                 <PersonCard
-                  id="0"
-                  email="@gmail.com"
+                  path="0.png"
+                  email="chaeminjung1502@gmail.com"
                   name="정채민"
-                  engName="Brian Jeong"
+                  engName="Brian Jung"
                   position="Co-founder"
-                  description=<p>
-                    - 1 <br />- 2 <br />- 3
-                  </p>
+                  description=<p>-고려대학교 스마트보안학과 재학</p>
                 />
               </PersonBoxContainer>
               <Waypoint

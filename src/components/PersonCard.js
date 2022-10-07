@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 export default function PersonCard({
-  id,
+  path,
   email,
   name,
   engName,
@@ -12,7 +12,7 @@ export default function PersonCard({
   return (
     <A href={"mailto:" + email}>
       <Box>
-        <ProfileImg src={require(`../assets/images/profile/${id}.png`)} />
+        <ProfileImg src={require(`../assets/images/profile/${path}`)} />
         <Name>{name}</Name>
         <EngName>{engName}</EngName>
         <Position>{position}</Position>
