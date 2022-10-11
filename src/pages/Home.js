@@ -211,7 +211,7 @@ export default function Home() {
                   position="Co-founder"
                 />
                 <PersonCard
-                  path="0.png"
+                  path="4.jpg"
                   email="contact@glob-up.com"
                   name="박재현"
                   engName="Hazel Park"
