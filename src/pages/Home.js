@@ -183,7 +183,7 @@ export default function Home() {
             <PersonBoxScroll>
               <PersonBoxContainer>
                 <PersonCard
-                  path="0.png"
+                  path="0.jpeg"
                   email="contact@glob-up.com"
                   name="김철수"
                   engName="Charles Kim"
@@ -226,7 +226,7 @@ export default function Home() {
                   position="Co-founder"
                 />
                 <PersonCard
-                  path="0.png"
+                  path="6.jpeg"
                   email="contact@glob-up.com"
                   name="윤재원"
                   engName="Jay Youn"
