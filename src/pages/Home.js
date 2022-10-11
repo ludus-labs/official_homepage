@@ -233,7 +233,7 @@ export default function Home() {
                   position="Co-founder"
                 />
                 <PersonCard
-                  path="0.png"
+                  path="7.jpg"
                   email="contact@glob-up.com"
                   name="정채민"
                   engName="Brian Jung"
