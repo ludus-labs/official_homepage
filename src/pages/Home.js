@@ -135,7 +135,7 @@ export default function Home() {
                   <ProductTextContainer>
                     <ProductTitle>Challenge ON</ProductTitle>
                     <ProductDescription>
-                      누구나 크리에이터가 될 수 있는 세상
+                      E2E. Entertain to Earn.
                     </ProductDescription>
                     <MoreButton>
                       <MoreButtonText>다운로드</MoreButtonText>
