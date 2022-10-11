@@ -1,14 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export default function PersonCard({
-  path,
-  email,
-  name,
-  engName,
-  position,
-  description,
-}) {
+export default function PersonCard({ path, email, name, engName, position }) {
   return (
     <A href={"mailto:" + email}>
       <Box>
@@ -16,7 +9,6 @@ export default function PersonCard({
         <Name>{name}</Name>
         <EngName>{engName}</EngName>
         <Position>{position}</Position>
-        <Description>{description}</Description>
       </Box>
     </A>
   );
@@ -47,23 +39,24 @@ const Box = styled.div`
   }
 `;
 const ProfileImg = styled.img`
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
+  width: 90px;
+  height: 90px;
+  border-radius: 45px;
+  margin-top: 30px;
   z-index: 20;
   @media screen and (max-width: 768px) {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
   }
 `;
 const Name = styled.p`
-  margin-top: 0;
+  margin-top: 5px;
   margin-bottom: 0;
   font-weight: 700;
   font-size: 20px;
   color: #484848;
   @media screen and (max-width: 768px) {
-    font-size: 14px;
+    font-size: 16px;
   }
 `;
 const EngName = styled.p`
@@ -73,26 +66,16 @@ const EngName = styled.p`
   font-size: 18px;
   color: #484848;
   @media screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: 14px;
   }
 `;
 const Position = styled.p`
   margin-top: 10px;
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 15px;
   color: #484848;
   @media screen and (max-width: 768px) {
-    font-size: 10px;
-  }
-`;
-const Description = styled.p`
-  margin-top: 25px;
-  margin-bottom: 0;
-  font-weight: 400;
-  font-size: 12px;
-  color: #606060;
-  @media screen and (max-width: 768px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 `;

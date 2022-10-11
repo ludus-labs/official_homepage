@@ -184,43 +184,35 @@ export default function Home() {
               <PersonBoxContainer>
                 <PersonCard
                   path="0.png"
-                  email="@gmail.com"
+                  email="contact@glob-up.com"
                   name="김철수"
                   engName="Charles Kim"
                   position="CEO"
-                  description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
                   path="0.png"
-                  email="full.of.idea.1@gmail.com"
+                  email="contact@glob-up.com"
                   name="정진욱"
                   engName="Jarvis Jeong"
                   position="CEO"
-                  description=<p>-고려대학교 전기전자 휴학</p>
                 />
                 <PersonCard
                   path="2.jpg"
-                  email="mintway0341@gmail.com"
+                  email="contact@glob-up.com"
                   name="강유민"
                   engName="Aiden Kang"
                   position="Co-founder"
-                  description=<p>
-                    -고려대학교 공대 재학
-                    <br />
-                    -(前)HVCL 인턴
-                  </p>
                 />
                 <PersonCard
                   path="3.jpg"
-                  email="barkjun75@gmail.com"
+                  email="contact@glob-up.com"
                   name="박성준"
                   engName="Dominick Park"
                   position="Co-founder"
-                  description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
                   path="0.png"
-                  email="pjhsarah@gmail.com"
+                  email="contact@glob-up.com"
                   name="박재현"
                   engName="Hazel Park"
                   position="Co-founder"
@@ -228,33 +220,24 @@ export default function Home() {
                 />
                 <PersonCard
                   path="5.jpg"
-                  email="alrbsshim14@gmail.com"
+                  email="contact@glob-up.com"
                   name="심하민"
                   engName="Zoe Shim"
                   position="Co-founder"
-                  description=<p>
-                    -고려대학교 전기전자 재학
-                    <br />
-                    -고려대학교 의공학교실 제작
-                    <br />
-                    -(前)피플스헬스 FE직군
-                  </p>
                 />
                 <PersonCard
                   path="0.png"
-                  email="ghy200000@gmail.com"
+                  email="contact@glob-up.com"
                   name="윤재원"
                   engName="Jay Youn"
                   position="Co-founder"
-                  description=<p>-고려대학교 전기전자 재학</p>
                 />
                 <PersonCard
                   path="0.png"
-                  email="chaeminjung1502@gmail.com"
+                  email="contact@glob-up.com"
                   name="정채민"
                   engName="Brian Jung"
                   position="Co-founder"
-                  description=<p>-고려대학교 스마트보안학과 재학</p>
                 />
               </PersonBoxContainer>
               <Waypoint
