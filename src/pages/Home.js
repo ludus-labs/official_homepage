@@ -3,9 +3,11 @@ import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { Waypoint } from "react-waypoint";
 import { useSpring, animated } from "react-spring";
+import globup_icon_logo from "../assets/images/globup_icon_logo.png";
 import main_image from "../assets/images/main_image.png";
+import syllablee_icon from "../assets/images/icon/syllablee_icon.png";
+import syllablee_text_icon from "../assets/images/icon/syllablee_text_icon.png";
 import gogo_icon from "../assets/images/icon/gogo_icon.png";
-import globup_icon from "../assets/images/icon/globup_icon.png";
 import kuplace_icon from "../assets/images/icon/kuplace_icon.png";
 import PersonCard from "../components/PersonCard";
 //just for check..
@@ -86,17 +88,17 @@ export default function Home() {
       <Background>
         <Top>
           <animated.div style={sloganContainerVisibleAnimation}>
-            <SloganContainer>
+            {/* <SloganContainer>
               <SloganText>
-                Enjoy.
+                글로벌
                 <br />
-                Be colorful.
+                스타트업
               </SloganText>
               <SloganSubtext>우리의 일상을 더욱 다채롭게</SloganSubtext>
-            </SloganContainer>
+            </SloganContainer> */}
           </animated.div>
           <animated.div style={mainImageVisibleAnimation}>
-            <MainImage src={main_image} />
+            <MainImage src={globup_icon_logo} />
           </animated.div>
         </Top>
         <Waypoint
@@ -114,15 +116,15 @@ export default function Home() {
           <ProductList>
             <animated.div style={gogoVisibleAnimation}>
               <ProductBoxLeftContainer marginLeft={isMobile ? "-30px" : "0px"}>
-                <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
+                <ProductIconLeft src={syllablee_icon} shadowColor="#00000020" />
                 <ProductBoxLeft>
                   <ProductTextContainer>
-                    <ProductTitle>ㄱ?(Gogo)</ProductTitle>
+                    <ProductTitle>SYLLABLEE</ProductTitle>
                     <ProductDescription>
-                      MZ를 위한 심플한 메신저
+                      구독형 학원 마케팅 서비스
                     </ProductDescription>
                     <MoreButton>
-                      <MoreButtonText>다운로드</MoreButtonText>
+                      <MoreButtonText>→</MoreButtonText>
                     </MoreButton>
                   </ProductTextContainer>
                 </ProductBoxLeft>
@@ -130,15 +132,15 @@ export default function Home() {
             </animated.div>
             <animated.div style={challengeonVisibleAnimation}>
               <ProductBoxLeftContainer marginLeft={isMobile ? "20px" : "160px"}>
-                <ProductIconLeft src={globup_icon} shadowColor="#4460ff80" />
+                <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
                 <ProductBoxLeft>
                   <ProductTextContainer>
-                    <ProductTitle>Challenge ON</ProductTitle>
+                    <ProductTitle>ㄱ?(GOGO)</ProductTitle>
                     <ProductDescription>
-                      E2E. Entertain to Earn.
+                      커뮤니케이션 이니시에이터
                     </ProductDescription>
                     <MoreButton>
-                      <MoreButtonText>다운로드</MoreButtonText>
+                      <MoreButtonText>→</MoreButtonText>
                     </MoreButton>
                   </ProductTextContainer>
                 </ProductBoxLeft>
@@ -167,7 +169,7 @@ export default function Home() {
                           window.open("https://kuplace.page.link/promotion");
                         }}
                       >
-                        다운로드
+                        →
                       </MoreButtonText>
                     </MoreButton>
                   </ProductTextContainer>
@@ -257,7 +259,7 @@ export default function Home() {
 }
 const Background = styled.div`
   width: 100vw;
-  padding-top: 40vh;
+  padding-top: 20vh;
   padding-bottom: 20vh;
   padding-left: 10vw;
   padding-right: 10vw;
@@ -291,7 +293,6 @@ const SloganContainer = styled.div`
 const SloganText = styled.p`
   font-weight: 900;
   font-size: 60px;
-  line-height: 1.3;
   @media screen and (max-width: 768px) {
     font-size: 40px;
     text-align: center;
@@ -309,12 +310,10 @@ const SloganSubtext = styled.p`
   }
 `;
 const MainImage = styled.img`
-  margin-left: 30px;
-  width: 300px;
+  width: 400px;
   @media screen and (max-width: 768px) {
-    margin-left: 10vw;
     margin-top: 30px;
-    width: 200px;
+    width: 320px;
   }
 `;
 const ProductTopText = styled.p`
@@ -414,7 +413,7 @@ const ProductDescription = styled.p`
 `;
 const MoreButton = styled.button`
   display: flex;
-  width: 100px;
+  width: 60px;
   height: 30px;
   margin-top: 10px;
   border-radius: 500px;
@@ -427,7 +426,7 @@ const MoreButton = styled.button`
     box-shadow: 5px 5px 30px #4460ff30;
   }
   @media screen and (max-width: 768px) {
-    width: 80px;
+    width: 50px;
   }
 `;
 const MoreButtonText = styled.p`
