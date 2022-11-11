@@ -4,35 +4,50 @@ import { useMediaQuery } from "react-responsive";
 import { Waypoint } from "react-waypoint";
 import { useSpring, animated } from "react-spring";
 import globup_icon_logo from "../assets/images/globup_icon_logo.png";
-import main_image from "../assets/images/main_image.png";
 import syllablee_icon from "../assets/images/icon/syllablee_icon.png";
 import syllablee_text_icon from "../assets/images/icon/syllablee_text_icon.png";
 import gogo_icon from "../assets/images/icon/gogo_icon.png";
 import kuplace_icon from "../assets/images/icon/kuplace_icon.png";
+import challengeon_icon from "../assets/images/icon/challengeon_icon.png";
+import dimple_icon from "../assets/images/icon/dimple_icon.png";
+import desde_seul_icon from "../assets/images/icon/desde_seul_icon.png";
+import tap_icon from "../assets/images/icon/tap_icon.png";
+import tumole_icon from "../assets/images/icon/tumole_icon.png";
+import piville from "../assets/images/piville.jpg";
 import PersonCard from "../components/PersonCard";
+import { useNavigate } from "react-router-dom";
 //just for check..
 
 export default function Home() {
+  const navigate = useNavigate();
   const [topInView, setTopInView] = useState(false);
+  const [historyInView, setHistoryInView] = useState(false);
   const [productListInView, setProductListInView] = useState(false);
   const [peopleInView, setPeopleInView] = useState(false);
   const isMobile = useMediaQuery({
     query: "(max-width:768px)",
   });
 
-  const sloganContainerVisibleAnimation = useSpring({
-    config: { duration: 600 },
-    delay: 0,
-    to: {
-      opacity: topInView ? 1 : 0,
-      y: topInView ? 20 : 0,
-    },
-  });
   const mainImageVisibleAnimation = useSpring({
     config: { duration: 800 },
     delay: 0,
     to: {
       opacity: topInView ? 1 : 0,
+    },
+  });
+  const historyContainerVisibleAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 0,
+    to: {
+      opacity: historyInView ? 1 : 0,
+      // y: historyInView ? 20 : 0,
+    },
+  });
+  const pivilleImgSizeAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 0,
+    to: {
+      scale: historyInView ? 1.1 : 1,
     },
   });
   const productsTextVisibleAnimation = useSpring({
@@ -42,7 +57,7 @@ export default function Home() {
       opacity: productListInView ? 1 : 0,
     },
   });
-  const gogoVisibleAnimation = useSpring({
+  const tumoleVisibleAnimation = useSpring({
     config: { duration: 600 },
     delay: 100,
     from: {
@@ -53,7 +68,18 @@ export default function Home() {
       x: productListInView ? 0 : -20,
     },
   });
-  const challengeonVisibleAnimation = useSpring({
+  const desdeSeulVisibleAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 200,
+    from: {
+      x: -20,
+    },
+    to: {
+      opacity: productListInView ? 1 : 0,
+      x: productListInView ? 0 : -20,
+    },
+  });
+  const tapVisibleAnimation = useSpring({
     config: { duration: 600 },
     delay: 300,
     from: {
@@ -64,7 +90,18 @@ export default function Home() {
       x: productListInView ? 0 : -20,
     },
   });
-  const kuplaceVisibleAnimation = useSpring({
+  const dimpleVisibleAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 400,
+    from: {
+      x: -20,
+    },
+    to: {
+      opacity: productListInView ? 1 : 0,
+      x: productListInView ? 0 : -20,
+    },
+  });
+  const challengeonVisibleAnimation = useSpring({
     config: { duration: 600 },
     delay: 500,
     from: {
@@ -73,6 +110,46 @@ export default function Home() {
     to: {
       opacity: productListInView ? 1 : 0,
       x: productListInView ? 0 : -20,
+    },
+  });
+  const kuplaceVisibleAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 600,
+    from: {
+      x: -20,
+    },
+    to: {
+      opacity: productListInView ? 1 : 0,
+      x: productListInView ? 0 : -20,
+    },
+  });
+  const gogoVisibleAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 700,
+    from: {
+      x: -20,
+    },
+    to: {
+      opacity: productListInView ? 1 : 0,
+      x: productListInView ? 0 : -20,
+    },
+  });
+  const syllableeVisibleAnimation = useSpring({
+    config: { duration: 600 },
+    delay: 800,
+    from: {
+      x: -20,
+    },
+    to: {
+      opacity: productListInView ? 1 : 0,
+      x: productListInView ? 0 : -20,
+    },
+  });
+  const lineVisibleAnimation = useSpring({
+    config: { duration: 300 },
+    delay: 0,
+    to: {
+      opacity: productListInView ? 1 : 0,
     },
   });
   const peopleVisibleAnimation = useSpring({
@@ -87,21 +164,12 @@ export default function Home() {
     <>
       <Background>
         <Top>
-          <animated.div style={sloganContainerVisibleAnimation}>
-            {/* <SloganContainer>
-              <SloganText>
-                글로벌
-                <br />
-                스타트업
-              </SloganText>
-              <SloganSubtext>우리의 일상을 더욱 다채롭게</SloganSubtext>
-            </SloganContainer> */}
-          </animated.div>
           <animated.div style={mainImageVisibleAnimation}>
             <MainImage src={globup_icon_logo} />
           </animated.div>
         </Top>
         <Waypoint
+          topOffset="50px"
           onEnter={() => {
             setTopInView(true);
           }}
@@ -109,88 +177,226 @@ export default function Home() {
             setTopInView(false);
           }}
         />
-        <animated.div style={productsTextVisibleAnimation}>
-          <ProductTopText>Products</ProductTopText>
+
+        <animated.div style={historyContainerVisibleAnimation}>
+          <HistoryContainer>
+            <HistoryTitle>세상에 우리 존재를 알리기까지...</HistoryTitle>
+            <DreamDiv>
+              <div
+                style={{
+                  width: "50vw",
+                  height: "40vw",
+                  borderRadius: "4vw",
+                  overflow: "hidden",
+                }}
+              >
+                <animated.div style={pivilleImgSizeAnimation}>
+                  <PivilleImg src={piville} alt="Pi-Ville" />
+                </animated.div>
+              </div>
+              <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
+            </DreamDiv>
+          </HistoryContainer>
         </animated.div>
-        <ProductListContainer>
-          <ProductList>
-            <animated.div style={gogoVisibleAnimation}>
-              <ProductBoxLeftContainer marginLeft={isMobile ? "-30px" : "0px"}>
-                <ProductIconLeft src={syllablee_icon} shadowColor="#00000020" />
-                <ProductBoxLeft>
-                  <ProductTextContainer>
-                    <ProductTitle>SYLLABLEE</ProductTitle>
-                    <ProductDescription>
-                      구독형 학원 마케팅 서비스
-                    </ProductDescription>
-                    <MoreButton>
-                      <MoreButtonText>→</MoreButtonText>
-                    </MoreButton>
-                  </ProductTextContainer>
-                </ProductBoxLeft>
-              </ProductBoxLeftContainer>
+
+        <RoadmapContainer>
+          <Waypoint
+            onEnter={() => {
+              setHistoryInView(true);
+            }}
+            onLeave={() => {
+              setHistoryInView(false);
+            }}
+          />
+          <animated.div style={productsTextVisibleAnimation}>
+            <ProductTopText>로드맵</ProductTopText>
+            <ProductTopSubText>실패를 두려워하지 않는 팀</ProductTopSubText>
+          </animated.div>
+          <ProductListContainer>
+            <ProductList>
+              <animated.div style={tumoleVisibleAnimation}>
+                <ProductBoxOldLeftContainer
+                  marginLeft={isMobile ? "-5px" : "60px"}
+                >
+                  <ProductIconLeft src={tumole_icon} shadowColor="#00000020" />
+                  <ProductBoxOldLeft>
+                    <ProductTextContainer>
+                      <ProductTitle>TU MOLE</ProductTitle>
+                      <ProductDescription>
+                        무역 시스템 공유 플랫폼
+                      </ProductDescription>
+                    </ProductTextContainer>
+                  </ProductBoxOldLeft>
+                </ProductBoxOldLeftContainer>
+              </animated.div>
+              <animated.div style={desdeSeulVisibleAnimation}>
+                <ProductBoxOldLeftContainer
+                  marginLeft={isMobile ? "-5px" : "130px"}
+                >
+                  <ProductIconLeft
+                    src={desde_seul_icon}
+                    shadowColor="#00000020"
+                  />
+                  <ProductBoxOldLeft>
+                    <ProductTextContainer>
+                      <ProductTitle>Desde Seúl</ProductTitle>
+                      <ProductDescription>
+                        K-굿즈 남미 쇼핑몰
+                      </ProductDescription>
+                    </ProductTextContainer>
+                  </ProductBoxOldLeft>
+                </ProductBoxOldLeftContainer>
+              </animated.div>
+              <animated.div style={tapVisibleAnimation}>
+                <ProductBoxOldLeftContainer
+                  marginLeft={isMobile ? "-5px" : "40px"}
+                >
+                  <ProductIconLeft src={tap_icon} shadowColor="#00000020" />
+                  <ProductBoxOldLeft>
+                    <ProductTextContainer>
+                      <ProductTitle>TAP</ProductTitle>
+                      <ProductDescription>
+                        남미 칠레 에이전시 서비스
+                      </ProductDescription>
+                    </ProductTextContainer>
+                  </ProductBoxOldLeft>
+                </ProductBoxOldLeftContainer>
+              </animated.div>
+              <animated.div style={dimpleVisibleAnimation}>
+                <ProductBoxOldLeftContainer
+                  marginLeft={isMobile ? "-5px" : "110px"}
+                >
+                  <ProductIconLeft src={dimple_icon} shadowColor="#00000020" />
+                  <ProductBoxOldLeft>
+                    <ProductTextContainer>
+                      <ProductTitle>Dimple</ProductTitle>
+                      <ProductDescription>
+                        남미 O2O 스마트 배송 서비스 & 픽업 기반 오픈마켓 플랫폼
+                      </ProductDescription>
+                    </ProductTextContainer>
+                  </ProductBoxOldLeft>
+                </ProductBoxOldLeftContainer>
+              </animated.div>
+              <Waypoint
+                onEnter={() => {
+                  setProductListInView(true);
+                }}
+              />
+              <animated.div style={challengeonVisibleAnimation}>
+                <ProductBoxOldLeftContainer
+                  marginLeft={isMobile ? "-5px" : "50px"}
+                >
+                  <ProductIconLeft
+                    src={challengeon_icon}
+                    shadowColor="#00000020"
+                  />
+                  <ProductBoxOldLeft>
+                    <ProductTextContainer>
+                      <ProductTitle>Challenge ON</ProductTitle>
+                      <ProductDescription>
+                        챌린지 기반 숏폼 영상공유 플랫폼
+                      </ProductDescription>
+                    </ProductTextContainer>
+                  </ProductBoxOldLeft>
+                </ProductBoxOldLeftContainer>
+              </animated.div>
+              <animated.div style={kuplaceVisibleAnimation}>
+                <ProductBoxLeftContainer
+                  marginLeft={isMobile ? "-30px" : "100px"}
+                >
+                  <ProductIconLeft src={kuplace_icon} shadowColor="#7644FF80" />
+                  <ProductBoxLeft
+                    onClick={() => {
+                      navigate(`/kuplace`);
+                    }}
+                  >
+                    <ProductTextContainer>
+                      <ProductTitle>KUplace</ProductTitle>
+                      <ProductDescription>
+                        고려대학교 공간정보 공유 커뮤니티
+                      </ProductDescription>
+                      <MoreButton>
+                        <MoreButtonText
+                          onClick={() => {
+                            navigate(`/kuplace`);
+                          }}
+                        >
+                          →
+                        </MoreButtonText>
+                      </MoreButton>
+                    </ProductTextContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
+              </animated.div>
+              <animated.div style={gogoVisibleAnimation}>
+                <ProductBoxLeftContainer marginLeft={isMobile ? "20px" : "0px"}>
+                  <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
+                  <ProductBoxLeft
+                    onClick={() => {
+                      navigate(`/gogo`);
+                    }}
+                  >
+                    <ProductTextContainer>
+                      <ProductTitle>ㄱ?(GOGO)</ProductTitle>
+                      <ProductDescription>
+                        커뮤니케이션 이니시에이터
+                      </ProductDescription>
+                      <MoreButton>
+                        <MoreButtonText
+                          onClick={() => {
+                            navigate(`/gogo`);
+                          }}
+                        >
+                          →
+                        </MoreButtonText>
+                      </MoreButton>
+                    </ProductTextContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
+              </animated.div>
+              <animated.div style={syllableeVisibleAnimation}>
+                <ProductBoxLeftContainer
+                  marginLeft={isMobile ? "-5px" : "70px"}
+                >
+                  <ProductIconLeft
+                    src={syllablee_icon}
+                    shadowColor="#00000020"
+                  />
+                  <ProductBoxLeft
+                    onClick={() => {
+                      navigate(`/syllablee`);
+                    }}
+                  >
+                    <ProductTextContainer>
+                      <ProductTitle>SYLLABLEE</ProductTitle>
+                      <ProductDescription>
+                        구독형 학원 마케팅 서비스
+                      </ProductDescription>
+                      <MoreButton>
+                        <MoreButtonText
+                          onClick={() => {
+                            navigate(`/syllablee`);
+                          }}
+                        >
+                          →
+                        </MoreButtonText>
+                      </MoreButton>
+                    </ProductTextContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
+              </animated.div>
+            </ProductList>
+            <animated.div style={lineVisibleAnimation}>
+              <Line></Line>
             </animated.div>
-            <animated.div style={challengeonVisibleAnimation}>
-              <ProductBoxLeftContainer marginLeft={isMobile ? "20px" : "160px"}>
-                <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
-                <ProductBoxLeft>
-                  <ProductTextContainer>
-                    <ProductTitle>ㄱ?(GOGO)</ProductTitle>
-                    <ProductDescription>
-                      커뮤니케이션 이니시에이터
-                    </ProductDescription>
-                    <MoreButton>
-                      <MoreButtonText>→</MoreButtonText>
-                    </MoreButton>
-                  </ProductTextContainer>
-                </ProductBoxLeft>
-              </ProductBoxLeftContainer>
-            </animated.div>
-            <Waypoint
-              onEnter={() => {
-                setProductListInView(true);
-              }}
-              onLeave={() => {
-                setProductListInView(false);
-              }}
-            />
-            <animated.div style={kuplaceVisibleAnimation}>
-              <ProductBoxLeftContainer marginLeft={isMobile ? "-5px" : "60px"}>
-                <ProductIconLeft src={kuplace_icon} shadowColor="#7644FF80" />
-                <ProductBoxLeft>
-                  <ProductTextContainer>
-                    <ProductTitle>KUplace</ProductTitle>
-                    <ProductDescription>
-                      고려대학교 공간정보 공유 커뮤니티
-                    </ProductDescription>
-                    <MoreButton>
-                      <MoreButtonText
-                        onClick={() => {
-                          window.open("https://kuplace.page.link/promotion");
-                        }}
-                      >
-                        →
-                      </MoreButtonText>
-                    </MoreButton>
-                  </ProductTextContainer>
-                </ProductBoxLeft>
-              </ProductBoxLeftContainer>
-            </animated.div>
-          </ProductList>
-        </ProductListContainer>
+          </ProductListContainer>
+        </RoadmapContainer>
 
         <animated.div style={peopleVisibleAnimation}>
           <PeopleContainer>
             <PeopleTitle>저희를 소개합니다</PeopleTitle>
             <PersonBoxScroll>
               <PersonBoxContainer>
-                <PersonCard
-                  path="0.jpeg"
-                  email="contact@glob-up.com"
-                  name="김철수"
-                  engName="Charles Kim"
-                  position="CEO"
-                />
                 <PersonCard
                   path="0.png"
                   email="contact@glob-up.com"
@@ -203,6 +409,13 @@ export default function Home() {
                   email="contact@glob-up.com"
                   name="강유민"
                   engName="Aiden Kang"
+                  position="Co-founder"
+                />
+                <PersonCard
+                  path="0.jpeg"
+                  email="contact@glob-up.com"
+                  name="김철수"
+                  engName="Charles Kim"
                   position="Co-founder"
                 />
                 <PersonCard
@@ -232,13 +445,6 @@ export default function Home() {
                   email="contact@glob-up.com"
                   name="윤재원"
                   engName="Jay Youn"
-                  position="Co-founder"
-                />
-                <PersonCard
-                  path="7.jpg"
-                  email="contact@glob-up.com"
-                  name="정채민"
-                  engName="Brian Jung"
                   position="Co-founder"
                 />
               </PersonBoxContainer>
@@ -317,7 +523,7 @@ const MainImage = styled.img`
   }
 `;
 const ProductTopText = styled.p`
-  margin-top: 300px;
+  margin-top: 100px;
   margin-bottom: 0;
   font-size: 35px;
   font-weight: 700;
@@ -328,22 +534,44 @@ const ProductTopText = styled.p`
     font-size: 30px;
   }
 `;
+const ProductTopSubText = styled.p`
+  margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #505050;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    margin-top: 100px;
+    font-size: 30px;
+  }
+`;
+const RoadmapContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 100px;
+  transform: scale(0.8);
+`;
 const ProductListContainer = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 `;
 const ProductList = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: column;
   margin-top: 60px;
+  z-index: 100;
 `;
 const ProductBoxLeftContainer = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-left: ${(props) => props.marginLeft};
+  transform: scale(0.9);
 `;
 const ProductIconLeft = styled.img`
   position: relative;
@@ -364,9 +592,10 @@ const ProductIconLeft = styled.img`
 const ProductBoxLeft = styled.div`
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 300px;
   height: 180px;
-  margin-bottom: 30px;
+  margin-top: 10px;
+  margin-bottom: 0px;
   padding: 40px;
   padding-left: 43px;
   box-shadow: 10px 10px 50px #00000015;
@@ -438,6 +667,69 @@ const MoreButtonText = styled.p`
   @media screen and (max-width: 768px) {
     font-size: 15px;
   }
+`;
+const HistoryContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 300px;
+`;
+const HistoryTitle = styled.p`
+  font-size: 35px;
+  font-weight: 700;
+`;
+const DreamDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+`;
+const PivilleImg = styled.img`
+  width: 60vw;
+`;
+const DreamTitle = styled.p`
+  font-size: 20px;
+  font-weight: 500;
+  margin-top: 10px;
+`;
+const ProductBoxOldLeftContainer = styled.div`
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  transform: scale(0.9);
+  margin-left: ${(props) => props.marginLeft};
+`;
+const ProductBoxOldLeft = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 280px;
+  height: 130px;
+  margin-bottom: 0px;
+  padding: 28px;
+  padding-left: 43px;
+  box-shadow: 10px 10px 50px #00000015;
+  background-color: white;
+  border-radius: 20px;
+  z-index: 10;
+  @media screen and (max-width: 768px) {
+    padding: 0px;
+    padding-top: 15px;
+    padding-left: 32px;
+    width: 240px;
+    height: 80px;
+  }
+`;
+const Line = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 0;
+  background: linear-gradient(#4460ff10, #4460ff);
+  width: 15px;
+  height: 1450px;
+  z-index: 0;
+  border-radius: 100px;
+  transform: translate(100px);
 `;
 const PeopleContainer = styled.div`
   display: flex;
