@@ -199,15 +199,12 @@ export default function Home() {
           </HistoryContainer>
         </animated.div>
 
+        <Waypoint
+          onEnter={() => {
+            setHistoryInView(true);
+          }}
+        />
         <RoadmapContainer>
-          <Waypoint
-            onEnter={() => {
-              setHistoryInView(true);
-            }}
-            onLeave={() => {
-              setHistoryInView(false);
-            }}
-          />
           <animated.div style={productsTextVisibleAnimation}>
             <ProductTopText>로드맵</ProductTopText>
             <ProductTopSubText>실패를 두려워하지 않는 팀</ProductTopSubText>
@@ -216,9 +213,12 @@ export default function Home() {
             <ProductList>
               <animated.div style={tumoleVisibleAnimation}>
                 <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "-5px" : "60px"}
+                  marginLeft={isMobile ? "10px" : "60px"}
                 >
-                  <ProductIconLeft src={tumole_icon} shadowColor="#00000020" />
+                  <ProductIconOldLeft
+                    src={tumole_icon}
+                    shadowColor="#00000020"
+                  />
                   <ProductBoxOldLeft>
                     <ProductTextContainer>
                       <ProductTitle>TU MOLE</ProductTitle>
@@ -231,9 +231,9 @@ export default function Home() {
               </animated.div>
               <animated.div style={desdeSeulVisibleAnimation}>
                 <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "-5px" : "130px"}
+                  marginLeft={isMobile ? "32px" : "130px"}
                 >
-                  <ProductIconLeft
+                  <ProductIconOldLeft
                     src={desde_seul_icon}
                     shadowColor="#00000020"
                   />
@@ -249,9 +249,9 @@ export default function Home() {
               </animated.div>
               <animated.div style={tapVisibleAnimation}>
                 <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "-5px" : "40px"}
+                  marginLeft={isMobile ? "6px" : "40px"}
                 >
-                  <ProductIconLeft src={tap_icon} shadowColor="#00000020" />
+                  <ProductIconOldLeft src={tap_icon} shadowColor="#00000020" />
                   <ProductBoxOldLeft>
                     <ProductTextContainer>
                       <ProductTitle>TAP</ProductTitle>
@@ -264,15 +264,19 @@ export default function Home() {
               </animated.div>
               <animated.div style={dimpleVisibleAnimation}>
                 <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "-5px" : "110px"}
+                  marginLeft={isMobile ? "22px" : "110px"}
                 >
-                  <ProductIconLeft src={dimple_icon} shadowColor="#00000020" />
+                  <ProductIconOldLeft
+                    src={dimple_icon}
+                    shadowColor="#00000020"
+                  />
                   <ProductBoxOldLeft>
                     <ProductTextContainer>
                       <ProductTitle>Dimple</ProductTitle>
-                      <ProductDescription>
-                        남미 O2O 스마트 배송 서비스 & 픽업 기반 오픈마켓 플랫폼
-                      </ProductDescription>
+                      <ProductDescriptionOld>
+                        남미 O2O 스마트 배송 서비스 & <br /> 픽업 기반 오픈마켓
+                        플랫폼
+                      </ProductDescriptionOld>
                     </ProductTextContainer>
                   </ProductBoxOldLeft>
                 </ProductBoxOldLeftContainer>
@@ -284,9 +288,9 @@ export default function Home() {
               />
               <animated.div style={challengeonVisibleAnimation}>
                 <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "-5px" : "50px"}
+                  marginLeft={isMobile ? "8px" : "50px"}
                 >
-                  <ProductIconLeft
+                  <ProductIconOldLeft
                     src={challengeon_icon}
                     shadowColor="#00000020"
                   />
@@ -302,7 +306,7 @@ export default function Home() {
               </animated.div>
               <animated.div style={kuplaceVisibleAnimation}>
                 <ProductBoxLeftContainer
-                  marginLeft={isMobile ? "-30px" : "100px"}
+                  marginLeft={isMobile ? "30px" : "100px"}
                 >
                   <ProductIconLeft src={kuplace_icon} shadowColor="#7644FF80" />
                   <ProductBoxLeft
@@ -329,7 +333,7 @@ export default function Home() {
                 </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={gogoVisibleAnimation}>
-                <ProductBoxLeftContainer marginLeft={isMobile ? "20px" : "0px"}>
+                <ProductBoxLeftContainer marginLeft={isMobile ? "0px" : "0px"}>
                   <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
                   <ProductBoxLeft
                     onClick={() => {
@@ -356,7 +360,7 @@ export default function Home() {
               </animated.div>
               <animated.div style={syllableeVisibleAnimation}>
                 <ProductBoxLeftContainer
-                  marginLeft={isMobile ? "-5px" : "70px"}
+                  marginLeft={isMobile ? "20px" : "70px"}
                 >
                   <ProductIconLeft
                     src={syllablee_icon}
@@ -536,13 +540,13 @@ const ProductTopText = styled.p`
 `;
 const ProductTopSubText = styled.p`
   margin-bottom: 0;
+  min-width: 150px;
   font-size: 20px;
   font-weight: 500;
   color: #505050;
   text-align: center;
   @media screen and (max-width: 768px) {
-    margin-top: 100px;
-    font-size: 30px;
+    font-size: 13px;
   }
 `;
 const RoadmapContainer = styled.div`
@@ -562,7 +566,7 @@ const ProductList = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: column;
-  margin-top: 60px;
+  margin-top: 20px;
   z-index: 100;
 `;
 const ProductBoxLeftContainer = styled.div`
@@ -574,6 +578,22 @@ const ProductBoxLeftContainer = styled.div`
   transform: scale(0.9);
 `;
 const ProductIconLeft = styled.img`
+  position: relative;
+  left: 40px;
+  top: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 12px;
+  box-shadow: 3px 3px 15px ${(props) => props.shadowColor};
+  z-index: 20;
+  @media screen and (max-width: 768px) {
+    left: 25px;
+    top: 30px;
+    width: 50px;
+    height: 50px;
+  }
+`;
+const ProductIconOldLeft = styled.img`
   position: relative;
   left: 40px;
   top: 30px;
@@ -607,9 +627,11 @@ const ProductBoxLeft = styled.div`
     box-shadow: 10px 10px 50px #00000030;
   }
   @media screen and (max-width: 768px) {
-    padding: 30px;
-    width: 250px;
-    height: 150px;
+    padding: 0px;
+    padding-top: 20px;
+    padding-left: 32px;
+    width: 240px;
+    height: 120px;
   }
 `;
 const ProductTextContainer = styled.div`
@@ -638,6 +660,16 @@ const ProductDescription = styled.p`
   color: #484848;
   @media screen and (max-width: 768px) {
     font-size: 12px;
+  }
+`;
+const ProductDescriptionOld = styled.p`
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #484848;
+  @media screen and (max-width: 768px) {
+    font-size: 10px;
   }
 `;
 const MoreButton = styled.button`
@@ -726,10 +758,13 @@ const Line = styled.div`
   top: 0;
   background: linear-gradient(#4460ff10, #4460ff);
   width: 15px;
-  height: 1450px;
+  height: 1380px;
   z-index: 0;
   border-radius: 100px;
   transform: translate(100px);
+  @media screen and (max-width: 768px) {
+    height: 950px;
+  }
 `;
 const PeopleContainer = styled.div`
   display: flex;
