@@ -408,6 +408,7 @@ export default function Home() {
         <animated.div style={cultureVisibleAnimation}>
           <TeamCultureContainer>
             <TitleText>팀 문화</TitleText>
+            <TeamCultureImg src={team_culture} alt="Team Culture" />
             <Waypoint
               onEnter={() => {
                 setCultureInView(true);
@@ -416,7 +417,6 @@ export default function Home() {
               //   setPeopleInView(false);
               // }}
             />
-            <TeamCultureImg src={team_culture} alt="Team Culture" />
           </TeamCultureContainer>
           <WhatIsContainer>
             <WhatIsImg src={what_is_globup} alt="Team Culture" />

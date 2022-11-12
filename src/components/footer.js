@@ -27,17 +27,16 @@ export default function Footer() {
 }
 const FooterBox = styled.div`
   width: 100%;
-  margin-top: 50px;
   /* height: 100px; */
   background-color: #4460ff;
   text-align: center;
-  padding: 60px;
+  padding: 30px;
   color: whitesmoke;
   /* margin-top: 100px; */
   /* position: absolute;
   bottom: 0; */
   @media screen and (max-width: 768px) {
-    padding: 30px;
+    padding: 20px;
   }
 `;
 const Detail = styled.div`
@@ -49,7 +48,7 @@ const Detail = styled.div`
 const P = styled.p`
   color: #f6fafd;
   font-size: 12px;
-  line-height: 0.8;
+  line-height: 2;
   @media screen and (max-width: 768px) {
     font-size: 7px;
   }
