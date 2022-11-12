@@ -211,23 +211,31 @@ export default function Home() {
         </animated.div>
 
         <animated.div style={historyContainerVisibleAnimation}>
-          <LogoContainer>
-            <MainImage src={globup_icon_logo} />
-          </LogoContainer>
           <HistoryContainer>
             <HistoryTitle>세상에 우리 존재를 알리기까지...</HistoryTitle>
+            <SloganText>글로벌 스타트업, GLOB-UP</SloganText>
+            <LogoContainer>
+              <MainImage src={globup_icon_logo} />
+            </LogoContainer>
             <DreamDiv>
+              <Waypoint
+                onEnter={() => {
+                  setHistoryInView(true);
+                }}
+              />
               <PivilleImgContainer>
                 <animated.div style={pivilleImgSizeAnimation}>
-                  <Waypoint
-                    onEnter={() => {
-                      setHistoryInView(true);
-                    }}
-                  />
                   <PivilleImg src={piville} alt="Pi-Ville" />
                 </animated.div>
               </PivilleImgContainer>
-              <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
+              <DreamTextContainer>
+                <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
+                <DreamDescription>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+                  sagittis turpis et nunc fringilla, nec porta tellus imperdiet.
+                  Curabitur convallis.
+                </DreamDescription>
+              </DreamTextContainer>
             </DreamDiv>
           </HistoryContainer>
         </animated.div>
@@ -239,74 +247,66 @@ export default function Home() {
           <ProductListContainer>
             <ProductList>
               <animated.div style={tumoleVisibleAnimation}>
-                <ProductBoxOldLeftContainer
+                <ProductBoxLeftContainer
                   marginLeft={isMobile ? "10px" : "60px"}
                 >
-                  <ProductIconOldLeft
-                    src={tumole_icon}
-                    shadowColor="#00000020"
-                  />
-                  <ProductBoxOldLeft>
+                  <ProductIconLeft src={tumole_icon} shadowColor="#00000020" />
+                  <ProductBoxLeft>
                     <ProductTextContainer>
                       <ProductTitle>TU MOLE</ProductTitle>
                       <ProductDescription>
                         무역 시스템 공유 플랫폼
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxOldLeft>
-                </ProductBoxOldLeftContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={desdeSeulVisibleAnimation}>
-                <ProductBoxOldLeftContainer
+                <ProductBoxLeftContainer
                   marginLeft={isMobile ? "32px" : "130px"}
                 >
-                  <ProductIconOldLeft
+                  <ProductIconLeft
                     src={desde_seul_icon}
                     shadowColor="#00000020"
                   />
-                  <ProductBoxOldLeft>
+                  <ProductBoxLeft>
                     <ProductTextContainer>
                       <ProductTitle>Desde Seúl</ProductTitle>
                       <ProductDescription>
                         K-굿즈 남미 쇼핑몰
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxOldLeft>
-                </ProductBoxOldLeftContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={tapVisibleAnimation}>
-                <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "6px" : "40px"}
-                >
-                  <ProductIconOldLeft src={tap_icon} shadowColor="#00000020" />
-                  <ProductBoxOldLeft>
+                <ProductBoxLeftContainer marginLeft={isMobile ? "6px" : "40px"}>
+                  <ProductIconLeft src={tap_icon} shadowColor="#00000020" />
+                  <ProductBoxLeft>
                     <ProductTextContainer>
                       <ProductTitle>TAP</ProductTitle>
                       <ProductDescription>
                         남미 칠레 에이전시 서비스
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxOldLeft>
-                </ProductBoxOldLeftContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={dimpleVisibleAnimation}>
-                <ProductBoxOldLeftContainer
+                <ProductBoxLeftContainer
                   marginLeft={isMobile ? "22px" : "110px"}
                 >
-                  <ProductIconOldLeft
-                    src={dimple_icon}
-                    shadowColor="#00000020"
-                  />
-                  <ProductBoxOldLeft>
+                  <ProductIconLeft src={dimple_icon} shadowColor="#00000020" />
+                  <ProductBoxLeft>
                     <ProductTextContainer>
                       <ProductTitle>Dimple</ProductTitle>
-                      <ProductDescriptionOld>
+                      <ProductDescription>
                         남미 O2O 스마트 배송 서비스 & <br /> 픽업 기반 오픈마켓
                         플랫폼
-                      </ProductDescriptionOld>
+                      </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxOldLeft>
-                </ProductBoxOldLeftContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
               </animated.div>
               <Waypoint
                 onEnter={() => {
@@ -314,22 +314,20 @@ export default function Home() {
                 }}
               />
               <animated.div style={challengeonVisibleAnimation}>
-                <ProductBoxOldLeftContainer
-                  marginLeft={isMobile ? "8px" : "50px"}
-                >
-                  <ProductIconOldLeft
+                <ProductBoxLeftContainer marginLeft={isMobile ? "8px" : "50px"}>
+                  <ProductIconLeft
                     src={challengeon_icon}
                     shadowColor="#00000020"
                   />
-                  <ProductBoxOldLeft>
+                  <ProductBoxLeft>
                     <ProductTextContainer>
                       <ProductTitle>Challenge ON</ProductTitle>
                       <ProductDescription>
                         챌린지 기반 숏폼 영상공유 플랫폼
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxOldLeft>
-                </ProductBoxOldLeftContainer>
+                  </ProductBoxLeft>
+                </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={kuplaceVisibleAnimation}>
                 <ProductBoxLeftContainer
@@ -346,15 +344,6 @@ export default function Home() {
                       <ProductDescription>
                         고려대학교 공간정보 공유 커뮤니티
                       </ProductDescription>
-                      <MoreButton>
-                        <MoreButtonText
-                          onClick={() => {
-                            navigate(`/kuplace`);
-                          }}
-                        >
-                          →
-                        </MoreButtonText>
-                      </MoreButton>
                     </ProductTextContainer>
                   </ProductBoxLeft>
                 </ProductBoxLeftContainer>
@@ -372,15 +361,6 @@ export default function Home() {
                       <ProductDescription>
                         커뮤니케이션 이니시에이터
                       </ProductDescription>
-                      <MoreButton>
-                        <MoreButtonText
-                          onClick={() => {
-                            navigate(`/gogo`);
-                          }}
-                        >
-                          →
-                        </MoreButtonText>
-                      </MoreButton>
                     </ProductTextContainer>
                   </ProductBoxLeft>
                 </ProductBoxLeftContainer>
@@ -403,15 +383,6 @@ export default function Home() {
                       <ProductDescription>
                         구독형 학원 마케팅 서비스
                       </ProductDescription>
-                      <MoreButton>
-                        <MoreButtonText
-                          onClick={() => {
-                            navigate(`/syllablee`);
-                          }}
-                        >
-                          →
-                        </MoreButtonText>
-                      </MoreButton>
                     </ProductTextContainer>
                   </ProductBoxLeft>
                 </ProductBoxLeftContainer>
@@ -612,6 +583,7 @@ const KuplaceContainer = styled.div`
 `;
 const MouseContainer = styled.div`
   opacity: 0;
+  margin-bottom: 15px;
   @media screen and (max-width: 768px) {
     opacity: 1;
   }
@@ -645,10 +617,11 @@ const SloganContainer = styled.div`
   }
 `;
 const SloganText = styled.p`
-  font-weight: 900;
-  font-size: 60px;
+  font-weight: 500;
+  font-size: 30px;
+  margin-top: 0px;
   @media screen and (max-width: 768px) {
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
   }
 `;
@@ -666,39 +639,38 @@ const SloganSubtext = styled.p`
 const MainImage = styled.img`
   width: 400px;
   @media screen and (max-width: 768px) {
-    margin-top: 30px;
-    width: 320px;
+    width: 280px;
   }
 `;
 const ProductTopText = styled.p`
   margin-top: 50px;
   margin-bottom: 0;
-  font-size: 35px;
+  font-size: 45px;
   font-weight: 700;
   color: black;
-  text-align: right;
+  text-align: center;
   @media screen and (max-width: 768px) {
     margin-top: 45px;
-    font-size: 27px;
+    font-size: 28px;
   }
 `;
 const ProductTopSubText = styled.p`
   margin-bottom: 0;
   min-width: 150px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 500;
   color: #505050;
-  text-align: right;
+  text-align: center;
   @media screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: 17px;
   }
 `;
 const RoadmapContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin-top: 100px;
-  transform: scale(0.8);
+  transform: scale(1);
 `;
 const ProductListContainer = styled.div`
   display: flex;
@@ -713,31 +685,7 @@ const ProductList = styled.div`
   margin-top: 20px;
   z-index: 100;
 `;
-const ProductBoxLeftContainer = styled.div`
-  width: fit-content;
-  display: flex;
-  flex-direction: row;
-  margin-top: 0px;
-  margin-left: ${(props) => props.marginLeft};
-  transform: scale(0.9);
-`;
 const ProductIconLeft = styled.img`
-  position: relative;
-  left: 40px;
-  top: 30px;
-  width: 70px;
-  height: 70px;
-  border-radius: 12px;
-  box-shadow: 3px 3px 15px ${(props) => props.shadowColor};
-  z-index: 20;
-  @media screen and (max-width: 768px) {
-    left: 25px;
-    top: 30px;
-    width: 50px;
-    height: 50px;
-  }
-`;
-const ProductIconOldLeft = styled.img`
   position: relative;
   left: 40px;
   top: 30px;
@@ -751,32 +699,6 @@ const ProductIconOldLeft = styled.img`
     top: 15px;
     width: 50px;
     height: 50px;
-  }
-`;
-const ProductBoxLeft = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 300px;
-  height: 180px;
-  margin-top: 10px;
-  margin-bottom: 0px;
-  padding: 40px;
-  padding-left: 43px;
-  box-shadow: 10px 10px 50px #00000015;
-  background-color: white;
-  border-radius: 20px;
-  z-index: 10;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.02);
-    box-shadow: 10px 10px 50px #00000030;
-  }
-  @media screen and (max-width: 768px) {
-    padding: 0px;
-    padding-top: 20px;
-    padding-left: 32px;
-    width: 240px;
-    height: 120px;
   }
 `;
 const ProductTextContainer = styled.div`
@@ -805,16 +727,6 @@ const ProductDescription = styled.p`
   color: #484848;
   @media screen and (max-width: 768px) {
     font-size: 12px;
-  }
-`;
-const ProductDescriptionOld = styled.p`
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-  font-weight: 400;
-  color: #484848;
-  @media screen and (max-width: 768px) {
-    font-size: 10px;
   }
 `;
 const MoreButton = styled.button`
@@ -852,21 +764,25 @@ const HistoryContainer = styled.div`
   margin-top: 0px;
 `;
 const HistoryTitle = styled.p`
-  font-size: 35px;
+  font-size: 45px;
   font-weight: 700;
   text-align: center;
+  margin-bottom: 5px;
   @media screen and (max-width: 768px) {
-    font-size: 30px;
+    font-size: 28px;
   }
 `;
 const DreamDiv = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-top: 20px;
-  align-items: center;
+  flex-direction: row;
+  margin-top: 100px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 30px;
+  }
 `;
 const PivilleImgContainer = styled.div`
-  width: 50vw;
+  width: 40vw;
   height: 40vw;
   max-width: 700px;
   max-height: 560px;
@@ -883,16 +799,39 @@ const PivilleImg = styled.img`
     width: 70vw;
   }
 `;
+const DreamTextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 40px;
+  @media screen and (max-width: 768px) {
+    margin-left: 0px;
+    align-items: center;
+  }
+`;
 const DreamTitle = styled.p`
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   margin-top: 10px;
+  margin-bottom: 4px;
   color: #404040;
+  text-align: left;
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+    text-align: center;
+  }
+`;
+const DreamDescription = styled.p`
+  width: 300px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #404040;
+  text-align: left;
   @media screen and (max-width: 768px) {
     font-size: 15px;
   }
 `;
-const ProductBoxOldLeftContainer = styled.div`
+const ProductBoxLeftContainer = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: row;
@@ -900,10 +839,10 @@ const ProductBoxOldLeftContainer = styled.div`
   transform: scale(0.9);
   margin-left: ${(props) => props.marginLeft};
 `;
-const ProductBoxOldLeft = styled.div`
+const ProductBoxLeft = styled.div`
   display: flex;
   flex-direction: row;
-  width: 280px;
+  width: 300px;
   height: 130px;
   margin-bottom: 0px;
   padding: 28px;
@@ -914,24 +853,25 @@ const ProductBoxOldLeft = styled.div`
   z-index: 10;
   @media screen and (max-width: 768px) {
     padding: 0px;
-    padding-top: 15px;
+    padding-top: 0px;
     padding-left: 32px;
     width: 240px;
     height: 80px;
+    align-items: center;
   }
 `;
 const Line = styled.div`
   position: absolute;
   left: 50%;
-  top: 0;
+  top: 20px;
   background: linear-gradient(#4460ff10, #4460ff);
   width: 15px;
-  height: 1380px;
+  height: 1400px;
   z-index: 0;
   border-radius: 100px;
-  transform: translate(100px);
+  transform: translate(-50%);
   @media screen and (max-width: 768px) {
-    height: 950px;
+    height: 930px;
   }
 `;
 const PeopleContainer = styled.div`
