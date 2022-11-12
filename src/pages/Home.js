@@ -173,33 +173,21 @@ export default function Home() {
                 navigate(`/gogo`);
               }}
             >
-              <img
-                style={{ width: "24vw", maxWidth: "420px" }}
-                src={gogo_banner}
-                alt="Pi-Ville"
-              />
+              <BannerImg1 src={gogo_banner} alt="Pi-Ville" />
             </GogoContainer>
             <SyllableeContainer
               onClick={() => {
                 navigate(`/syllablee`);
               }}
             >
-              <img
-                style={{ width: "30vw", maxWidth: "525px" }}
-                src={syllablee_banner}
-                alt="Pi-Ville"
-              />
+              <BannerImg2 src={syllablee_banner} alt="Pi-Ville" />
             </SyllableeContainer>
             <KuplaceContainer
               onClick={() => {
                 navigate(`/kuplace`);
               }}
             >
-              <img
-                style={{ width: "24vw", maxWidth: "420px" }}
-                src={kuplace_banner}
-                alt="Pi-Ville"
-              />
+              <BannerImg1 src={kuplace_banner} alt="Pi-Ville" />
             </KuplaceContainer>
           </Top>
         </animated.div>
@@ -501,8 +489,8 @@ const Background = styled.div`
   width: 100vw;
   padding-top: 20vh;
   padding-bottom: 20vh;
-  padding-left: 3vw;
-  padding-right: 3vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
   background: #f6fafd;
   background-size: cover;
   display: flex;
@@ -510,6 +498,26 @@ const Background = styled.div`
   /* justify-content: center; */
   @media screen and (max-width: 768px) {
     padding-top: 20vh;
+  }
+`;
+const BannerImg1 = styled.img`
+  width: 24vw;
+  height: 16vw;
+  @media screen and (max-width: 768px) {
+    width: 50vw;
+    height: auto;
+    border-radius: 15px;
+    margin-right: 0px;
+  }
+`;
+const BannerImg2 = styled.img`
+  width: 30vw;
+  height: 20vw;
+  @media screen and (max-width: 768px) {
+    width: 50vw;
+    height: auto;
+    border-radius: 15px;
+    margin-right: 0px;
   }
 `;
 const GogoContainer = styled.div`
@@ -531,10 +539,10 @@ const GogoContainer = styled.div`
     box-shadow: 10px 10px 50px #00000030;
   }
   @media screen and (max-width: 768px) {
-    width: 30vw;
-    height: 20vw;
+    width: 70vw;
+    height: 35vw;
     border-radius: 15px;
-    margin-right: 8px;
+    margin-right: 0px;
   }
 `;
 const SyllableeContainer = styled.div`
@@ -555,8 +563,9 @@ const SyllableeContainer = styled.div`
     box-shadow: 10px 10px 50px #00000030;
   }
   @media screen and (max-width: 768px) {
-    width: 36vw;
-    height: 24vw;
+    width: 70vw;
+    height: 35vw;
+    margin-top: 10px;
     border-radius: 15px;
   }
 `;
@@ -579,10 +588,11 @@ const KuplaceContainer = styled.div`
     box-shadow: 10px 10px 50px #00000030;
   }
   @media screen and (max-width: 768px) {
-    width: 30vw;
-    height: 20vw;
+    width: 70vw;
+    height: 35vw;
     border-radius: 15px;
-    margin-left: 8px;
+    margin-top: 10px;
+    margin-left: 0px;
   }
 `;
 const Top = styled.div`
@@ -591,6 +601,9 @@ const Top = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 100px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 const LogoContainer = styled.div`
   width: 100%;
