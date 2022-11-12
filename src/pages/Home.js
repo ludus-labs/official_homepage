@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./mouseAnimation.css";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { Waypoint } from "react-waypoint";
@@ -178,22 +179,32 @@ export default function Home() {
                 navigate(`/gogo`);
               }}
             >
-              <BannerImg1 src={gogo_banner} alt="Pi-Ville" />
+              <BannerImg1 src={gogo_banner} alt="GOGO" />
             </GogoContainer>
             <SyllableeContainer
               onClick={() => {
                 navigate(`/syllablee`);
               }}
             >
-              <BannerImg2 src={syllablee_banner} alt="Pi-Ville" />
+              <BannerImg2 src={syllablee_banner} alt="SYLLABLEE" />
             </SyllableeContainer>
             <KuplaceContainer
               onClick={() => {
                 navigate(`/kuplace`);
               }}
             >
-              <BannerImg1 src={kuplace_banner} alt="Pi-Ville" />
+              <BannerImg1 src={kuplace_banner} alt="KUplace" />
             </KuplaceContainer>
+            <div class="mouse_scroll">
+              <div className="mouse">
+                <div className="wheel"></div>
+              </div>
+              <div>
+                <span className="m_scroll_arrows unu"></span>
+                <span className="m_scroll_arrows doi"></span>
+                <span className="m_scroll_arrows trei"></span>
+              </div>
+            </div>
           </Top>
         </animated.div>
 
