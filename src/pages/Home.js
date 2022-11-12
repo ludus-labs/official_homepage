@@ -18,6 +18,8 @@ import desde_seul_icon from "../assets/images/icon/desde_seul_icon.png";
 import tap_icon from "../assets/images/icon/tap_icon.png";
 import tumole_icon from "../assets/images/icon/tumole_icon.png";
 import piville from "../assets/images/piville.jpg";
+import team_culture from "../assets/images/team_culture.svg";
+import what_is_globup from "../assets/images/what_is_globup.svg";
 import PersonCard from "../components/PersonCard";
 import { useNavigate } from "react-router-dom";
 //just for check..
@@ -27,6 +29,7 @@ export default function Home() {
   const [topInView, setTopInView] = useState(false);
   const [historyInView, setHistoryInView] = useState(false);
   const [productListInView, setProductListInView] = useState(false);
+  const [cultureInView, setCultureInView] = useState(false);
   const [peopleInView, setPeopleInView] = useState(false);
   const isMobile = useMediaQuery({
     query: "(max-width:768px)",
@@ -156,6 +159,14 @@ export default function Home() {
       opacity: productListInView ? 1 : 0,
     },
   });
+  const cultureVisibleAnimation = useSpring({
+    config: { duration: 800 },
+    delay: 0,
+    to: {
+      opacity: cultureInView ? 1 : 0,
+    },
+  });
+
   const peopleVisibleAnimation = useSpring({
     config: { duration: 800 },
     delay: 0,
@@ -215,14 +226,14 @@ export default function Home() {
             <HistoryTitle>세상에 우리 존재를 알리기까지...</HistoryTitle>
             <SloganText>글로벌 스타트업, GLOB-UP</SloganText>
             <LogoContainer>
-              <MainImage src={globup_icon_logo} />
-            </LogoContainer>
-            <DreamDiv>
               <Waypoint
                 onEnter={() => {
                   setHistoryInView(true);
                 }}
               />
+              <MainImage src={globup_icon_logo} />
+            </LogoContainer>
+            <DreamDiv>
               <PivilleImgContainer>
                 <animated.div style={pivilleImgSizeAnimation}>
                   <PivilleImg src={piville} alt="Pi-Ville" />
@@ -241,7 +252,7 @@ export default function Home() {
         </animated.div>
         <RoadmapContainer>
           <animated.div style={productsTextVisibleAnimation}>
-            <ProductTopText>로드맵</ProductTopText>
+            <TitleText>로드맵</TitleText>
             <ProductTopSubText>실패를 두려워하지 않는 팀</ProductTopSubText>
           </animated.div>
           <ProductListContainer>
@@ -394,6 +405,24 @@ export default function Home() {
           </ProductListContainer>
         </RoadmapContainer>
 
+        <animated.div style={cultureVisibleAnimation}>
+          <TeamCultureContainer>
+            <TitleText>팀 문화</TitleText>
+            <Waypoint
+              onEnter={() => {
+                setCultureInView(true);
+              }}
+              // onLeave={() => {
+              //   setPeopleInView(false);
+              // }}
+            />
+            <TeamCultureImg src={team_culture} alt="Team Culture" />
+          </TeamCultureContainer>
+          <WhatIsContainer>
+            <WhatIsImg src={what_is_globup} alt="Team Culture" />
+          </WhatIsContainer>
+        </animated.div>
+
         <animated.div style={peopleVisibleAnimation}>
           <PeopleContainer>
             <PeopleTitle>저희를 소개합니다</PeopleTitle>
@@ -454,9 +483,9 @@ export default function Home() {
                 onEnter={() => {
                   setPeopleInView(true);
                 }}
-                onLeave={() => {
-                  setPeopleInView(false);
-                }}
+                // onLeave={() => {
+                //   setPeopleInView(false);
+                // }}
               />
             </PersonBoxScroll>
           </PeopleContainer>
@@ -642,7 +671,7 @@ const MainImage = styled.img`
     width: 280px;
   }
 `;
-const ProductTopText = styled.p`
+const TitleText = styled.p`
   margin-top: 50px;
   margin-bottom: 0;
   font-size: 45px;
@@ -729,34 +758,6 @@ const ProductDescription = styled.p`
     font-size: 12px;
   }
 `;
-const MoreButton = styled.button`
-  display: flex;
-  width: 60px;
-  height: 30px;
-  margin-top: 10px;
-  border-radius: 500px;
-  background-color: #4460ff;
-  color: #ffffff;
-  border-width: 0px;
-  justify-content: center;
-  align-items: center;
-  &:hover {
-    box-shadow: 5px 5px 30px #4460ff30;
-  }
-  @media screen and (max-width: 768px) {
-    width: 50px;
-  }
-`;
-const MoreButtonText = styled.p`
-  display: inline-block;
-  color: #ffffff;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-size: 15px;
-  @media screen and (max-width: 768px) {
-    font-size: 15px;
-  }
-`;
 const HistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -779,21 +780,24 @@ const DreamDiv = styled.div`
   @media screen and (max-width: 768px) {
     flex-direction: column;
     margin-top: 30px;
+    align-items: center;
   }
 `;
 const PivilleImgContainer = styled.div`
-  width: 40vw;
-  height: 40vw;
+  width: 30vw;
+  height: 22vw;
   max-width: 700px;
   max-height: 560px;
-  border-radius: 4vw;
+  border-radius: 3.2vw;
   overflow: hidden;
   @media screen and (max-width: 768px) {
     width: 70vw;
+    height: 40vw;
+    border-radius: 6vw;
   }
 `;
 const PivilleImg = styled.img`
-  width: 60vw;
+  width: 40vw;
   max-width: 840px;
   @media screen and (max-width: 768px) {
     width: 70vw;
@@ -845,15 +849,15 @@ const ProductBoxLeft = styled.div`
   width: 300px;
   height: 130px;
   margin-bottom: 0px;
-  padding: 28px;
-  padding-left: 43px;
+  padding: 0px;
+  padding-left: 46px;
   box-shadow: 10px 10px 50px #00000015;
   background-color: white;
   border-radius: 20px;
+  align-items: center;
   z-index: 10;
   @media screen and (max-width: 768px) {
     padding: 0px;
-    padding-top: 0px;
     padding-left: 32px;
     width: 240px;
     height: 80px;
@@ -881,11 +885,45 @@ const Line = styled.div`
     height: 920px;
   }
 `;
+const TeamCultureContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 150px;
+  @media screen and (max-width: 768px) {
+    margin-top: 120px;
+  }
+`;
+const TeamCultureImg = styled.img`
+  width: 50vw;
+  max-width: 50vh;
+  margin-top: 20px;
+  @media screen and (max-width: 768px) {
+    width: 80vw;
+  }
+`;
+const WhatIsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  @media screen and (max-width: 768px) {
+    margin-top: 70px;
+  }
+`;
+const WhatIsImg = styled.img`
+  width: 40vw;
+  max-width: 50vh;
+  margin-top: 20px;
+  @media screen and (max-width: 768px) {
+    width: 70vw;
+  }
+`;
 const PeopleContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: fit-content;
-  margin-top: 300px;
+  margin-top: 100px;
   margin-left: 20vw;
   margin-right: 20vw;
   padding-bottom: 10px;
