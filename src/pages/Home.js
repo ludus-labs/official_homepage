@@ -835,7 +835,7 @@ const ProductBoxLeftContainer = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: row;
-  margin-top: 20px;
+  margin-top: 15px;
   transform: scale(0.9);
   margin-left: ${(props) => props.marginLeft};
 `;
@@ -866,12 +866,12 @@ const Line = styled.div`
   top: 20px;
   background: linear-gradient(#4460ff10, #4460ff);
   width: 15px;
-  height: 1400px;
+  height: 1370px;
   z-index: 0;
   border-radius: 100px;
   transform: translate(-50%);
   @media screen and (max-width: 768px) {
-    height: 930px;
+    height: 920px;
   }
 `;
 const PeopleContainer = styled.div`
