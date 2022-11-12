@@ -7,9 +7,6 @@ import syllablee_pdf from "../assets/pdf/syllablee_pdf.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Syllablee = () => {
-  const [numPages, setNumPages] = useState(7);
-  const [pageNumber, setPageNumber] = useState(1);
-
   return (
     <Background>
       <Title>SYLLABLEE</Title>
