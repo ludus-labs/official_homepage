@@ -222,14 +222,14 @@ export default function Home() {
             <DreamDiv>
               <PivilleImgContainer>
                 <animated.div style={pivilleImgSizeAnimation}>
+                  <Waypoint
+                    onEnter={() => {
+                      setHistoryInView(true);
+                    }}
+                  />
                   <PivilleImg src={piville} alt="Pi-Ville" />
                 </animated.div>
               </PivilleImgContainer>
-              <Waypoint
-                onEnter={() => {
-                  setHistoryInView(true);
-                }}
-              />
               <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
             </DreamDiv>
           </HistoryContainer>
