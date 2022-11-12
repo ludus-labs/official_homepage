@@ -891,6 +891,7 @@ const PeopleContainer = styled.div`
   padding-bottom: 10px;
   border-radius: 25px;
   background-color: #4460ff;
+  scale: 0.9;
   @media screen and (max-width: 768px) {
     margin-top: 100px;
     margin-left: 0;
