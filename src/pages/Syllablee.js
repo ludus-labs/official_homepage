@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+import { Ring } from "react-cssfx-loading";
 import styled from "styled-components";
 import syllablee_pdf from "../assets/pdf/syllablee_pdf.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -15,7 +16,16 @@ const Syllablee = () => {
           pageNumber={1}
           renderTextLayer={false}
           renderAnnotationLayer={false}
-          loading=""
+          loading=<div
+            style={{
+              marginTop: "40vh",
+              marginBottom: "40vh",
+              zIndex: "100",
+              alignItems: "center",
+            }}
+          >
+            <Ring color="#00A68A" width="100px" height="100px" duration="1s" />
+          </div>
         />
         <Page
           pageNumber={2}
@@ -59,5 +69,8 @@ const PDFDocumentWrapper = styled.div`
   }
   min-height: 100%;
   background-color: #e2eeec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 export default Syllablee;

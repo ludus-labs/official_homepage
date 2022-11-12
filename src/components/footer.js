@@ -30,11 +30,14 @@ const FooterBox = styled.div`
   /* height: 100px; */
   background-color: #4460ff;
   text-align: center;
-  padding: 30px;
+  padding: 60px;
   color: whitesmoke;
   /* margin-top: 100px; */
   /* position: absolute;
   bottom: 0; */
+  @media screen and (max-width: 768px) {
+    padding: 30px;
+  }
 `;
 const Detail = styled.div`
   text-align: center;

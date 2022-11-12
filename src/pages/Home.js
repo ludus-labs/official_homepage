@@ -182,18 +182,11 @@ export default function Home() {
           <HistoryContainer>
             <HistoryTitle>세상에 우리 존재를 알리기까지...</HistoryTitle>
             <DreamDiv>
-              <div
-                style={{
-                  width: "50vw",
-                  height: "40vw",
-                  borderRadius: "4vw",
-                  overflow: "hidden",
-                }}
-              >
+              <PivilleImgContainer>
                 <animated.div style={pivilleImgSizeAnimation}>
                   <PivilleImg src={piville} alt="Pi-Ville" />
                 </animated.div>
-              </div>
+              </PivilleImgContainer>
               <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
             </DreamDiv>
           </HistoryContainer>
@@ -704,11 +697,15 @@ const HistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 300px;
+  margin-top: 100px;
 `;
 const HistoryTitle = styled.p`
   font-size: 35px;
   font-weight: 700;
+  text-align: center;
+  @media screen and (max-width: 768px) {
+    font-size: 30px;
+  }
 `;
 const DreamDiv = styled.div`
   display: flex;
@@ -716,13 +713,29 @@ const DreamDiv = styled.div`
   margin-top: 20px;
   align-items: center;
 `;
+const PivilleImgContainer = styled.div`
+  width: 50vw;
+  height: 40vw;
+  border-radius: 4vw;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: 70vw;
+  }
+`;
 const PivilleImg = styled.img`
   width: 60vw;
+  @media screen and (max-width: 768px) {
+    width: 70vw;
+  }
 `;
 const DreamTitle = styled.p`
   font-size: 20px;
   font-weight: 500;
   margin-top: 10px;
+  color: #404040;
+  @media screen and (max-width: 768px) {
+    font-size: 15px;
+  }
 `;
 const ProductBoxOldLeftContainer = styled.div`
   width: fit-content;
