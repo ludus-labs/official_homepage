@@ -621,7 +621,7 @@ const Top = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
   }
