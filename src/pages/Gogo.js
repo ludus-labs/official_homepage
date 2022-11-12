@@ -3,7 +3,6 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { Ring } from "react-cssfx-loading";
 import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
-import gogo_video from "../assets/videos/gogo_video.mp4";
 import gogo_pdf from "../assets/pdf/gogo_pdf.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -25,10 +24,17 @@ const Gogo = () => {
       >
         →
       </Button>
-      <video controls width="85%" autoPlay muted>
-        <source src={gogo_video} type="video/mp4" />
-        Sorry, your browser doesn't support videos.
-      </video>
+      <div
+        style={{ position: "relative", width: "88%", paddingBottom: "49.5%" }}
+      >
+        {" "}
+        <iframe
+          src="https://youtube.com/embed/5K4aFRvrWBc"
+          alt="gogo_video"
+          width="80%"
+          style={{ position: "absolute", width: "100%", height: "100%" }}
+        />
+      </div>
       <PDFDocumentWrapper>
         <Document
           file={gogo_pdf}
