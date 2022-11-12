@@ -33,7 +33,7 @@ export default function Home() {
   });
 
   const mainImageVisibleAnimation = useSpring({
-    config: { duration: 1200 },
+    config: { duration: 600 },
     delay: 0,
     to: {
       opacity: topInView ? 1 : 0,
@@ -41,7 +41,7 @@ export default function Home() {
   });
   const historyContainerVisibleAnimation = useSpring({
     config: { duration: 600 },
-    delay: 0,
+    delay: 600,
     to: {
       opacity: historyInView ? 1 : 0,
       // y: historyInView ? 20 : 0,
@@ -334,7 +334,7 @@ export default function Home() {
                   marginLeft={isMobile ? "30px" : "100px"}
                 >
                   <ProductIconLeft src={kuplace_icon} shadowColor="#7644FF80" />
-                  <ProductBoxLeft
+                  <PointerProductBoxLeft
                     onClick={() => {
                       navigate(`/kuplace`);
                     }}
@@ -345,13 +345,13 @@ export default function Home() {
                         고려대학교 공간정보 공유 커뮤니티
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxLeft>
+                  </PointerProductBoxLeft>
                 </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={gogoVisibleAnimation}>
                 <ProductBoxLeftContainer marginLeft={isMobile ? "0px" : "0px"}>
                   <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
-                  <ProductBoxLeft
+                  <PointerProductBoxLeft
                     onClick={() => {
                       navigate(`/gogo`);
                     }}
@@ -362,7 +362,7 @@ export default function Home() {
                         커뮤니케이션 이니시에이터
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxLeft>
+                  </PointerProductBoxLeft>
                 </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={syllableeVisibleAnimation}>
@@ -373,7 +373,7 @@ export default function Home() {
                     src={syllablee_icon}
                     shadowColor="#00000020"
                   />
-                  <ProductBoxLeft
+                  <PointerProductBoxLeft
                     onClick={() => {
                       navigate(`/syllablee`);
                     }}
@@ -384,7 +384,7 @@ export default function Home() {
                         구독형 학원 마케팅 서비스
                       </ProductDescription>
                     </ProductTextContainer>
-                  </ProductBoxLeft>
+                  </PointerProductBoxLeft>
                 </ProductBoxLeftContainer>
               </animated.div>
             </ProductList>
@@ -860,6 +860,13 @@ const ProductBoxLeft = styled.div`
     align-items: center;
   }
 `;
+const PointerProductBoxLeft = styled(ProductBoxLeft)`
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 50px #00000030;
+  }
+`;
 const Line = styled.div`
   position: absolute;
   left: 50%;
@@ -879,8 +886,8 @@ const PeopleContainer = styled.div`
   flex-direction: column;
   height: fit-content;
   margin-top: 300px;
-  margin-left: 10vw;
-  margin-right: 10vw;
+  margin-left: 20vw;
+  margin-right: 20vw;
   padding-bottom: 10px;
   border-radius: 25px;
   background-color: #4460ff;
