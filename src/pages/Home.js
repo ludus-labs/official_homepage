@@ -168,6 +168,11 @@ export default function Home() {
       <Background>
         <animated.div style={mainImageVisibleAnimation}>
           <Top>
+            <Waypoint
+              onEnter={() => {
+                setTopInView(true);
+              }}
+            />
             <GogoContainer
               onClick={() => {
                 navigate(`/gogo`);
@@ -191,15 +196,6 @@ export default function Home() {
             </KuplaceContainer>
           </Top>
         </animated.div>
-        <Waypoint
-          topOffset="50px"
-          onEnter={() => {
-            setTopInView(true);
-          }}
-          // onLeave={() => {
-          //   setTopInView(false);
-          // }}
-        />
 
         <animated.div style={historyContainerVisibleAnimation}>
           <LogoContainer>
@@ -541,6 +537,8 @@ const GogoContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 70vw;
     height: 35vw;
+    max-width: 10000px;
+    max-height: 10000px;
     border-radius: 15px;
     margin-right: 0px;
   }
@@ -565,6 +563,8 @@ const SyllableeContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 70vw;
     height: 35vw;
+    max-width: 10000px;
+    max-height: 10000px;
     margin-top: 10px;
     border-radius: 15px;
   }
@@ -590,6 +590,8 @@ const KuplaceContainer = styled.div`
   @media screen and (max-width: 768px) {
     width: 70vw;
     height: 35vw;
+    max-width: 10000px;
+    max-height: 10000px;
     border-radius: 15px;
     margin-top: 10px;
     margin-left: 0px;
