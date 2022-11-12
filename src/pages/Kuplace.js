@@ -3,7 +3,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { Ring } from "react-cssfx-loading";
 import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
-import syllablee_pdf from "../assets/pdf/syllablee_pdf.pdf";
+import kuplace_pdf from "../assets/pdf/kuplace_pdf.pdf";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Kuplace = () => {
@@ -26,7 +26,7 @@ const Kuplace = () => {
       </Button>
       <PDFDocumentWrapper>
         <Document
-          file={syllablee_pdf}
+          file={kuplace_pdf}
           loading=<div
             style={{
               marginTop: "50vh",
@@ -38,12 +38,12 @@ const Kuplace = () => {
             <Ring color="#FF445E" width="100px" height="100px" duration="1s" />
           </div>
         >
-          {/* <Page
+          <Page
             pageNumber={1}
             renderTextLayer={false}
             renderAnnotationLayer={false}
             loading=""
-          /> */}
+          />
         </Document>
       </PDFDocumentWrapper>
     </Background>
@@ -76,7 +76,7 @@ const PDFDocumentWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #e2eeec;
+  background-color: #fce8eb;
   border-radius: 30px;
   overflow: hidden;
   @media screen and (max-width: 768px) {
