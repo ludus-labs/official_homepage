@@ -25,7 +25,11 @@ const Gogo = () => {
         →
       </Button>
       <div
-        style={{ position: "relative", width: "88%", paddingBottom: "49.5%" }}
+        style={{
+          position: "relative",
+          width: "80%",
+          paddingBottom: "45%",
+        }}
       >
         {" "}
         <iframe
