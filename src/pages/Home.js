@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { Waypoint } from "react-waypoint";
 import { useSpring, animated } from "react-spring";
+import syllablee_banner from "../assets/images/banners/syllablee_banner.png";
+import gogo_banner from "../assets/images/banners/gogo_banner.png";
+import kuplace_banner from "../assets/images/banners/kuplace_banner.png";
 import globup_icon_logo from "../assets/images/globup_icon_logo.png";
 import syllablee_icon from "../assets/images/icon/syllablee_icon.png";
 import syllablee_text_icon from "../assets/images/icon/syllablee_text_icon.png";
@@ -29,7 +32,7 @@ export default function Home() {
   });
 
   const mainImageVisibleAnimation = useSpring({
-    config: { duration: 800 },
+    config: { duration: 1200 },
     delay: 0,
     to: {
       opacity: topInView ? 1 : 0,
@@ -163,22 +166,57 @@ export default function Home() {
   return (
     <>
       <Background>
-        <Top>
-          <animated.div style={mainImageVisibleAnimation}>
-            <MainImage src={globup_icon_logo} />
-          </animated.div>
-        </Top>
+        <animated.div style={mainImageVisibleAnimation}>
+          <Top>
+            <GogoContainer
+              onClick={() => {
+                navigate(`/gogo`);
+              }}
+            >
+              <img
+                style={{ width: "24vw", maxWidth: "420px" }}
+                src={gogo_banner}
+                alt="Pi-Ville"
+              />
+            </GogoContainer>
+            <SyllableeContainer
+              onClick={() => {
+                navigate(`/syllablee`);
+              }}
+            >
+              <img
+                style={{ width: "30vw", maxWidth: "525px" }}
+                src={syllablee_banner}
+                alt="Pi-Ville"
+              />
+            </SyllableeContainer>
+            <KuplaceContainer
+              onClick={() => {
+                navigate(`/kuplace`);
+              }}
+            >
+              <img
+                style={{ width: "24vw", maxWidth: "420px" }}
+                src={kuplace_banner}
+                alt="Pi-Ville"
+              />
+            </KuplaceContainer>
+          </Top>
+        </animated.div>
         <Waypoint
           topOffset="50px"
           onEnter={() => {
             setTopInView(true);
           }}
-          onLeave={() => {
-            setTopInView(false);
-          }}
+          // onLeave={() => {
+          //   setTopInView(false);
+          // }}
         />
 
         <animated.div style={historyContainerVisibleAnimation}>
+          <LogoContainer>
+            <MainImage src={globup_icon_logo} />
+          </LogoContainer>
           <HistoryContainer>
             <HistoryTitle>세상에 우리 존재를 알리기까지...</HistoryTitle>
             <DreamDiv>
@@ -187,16 +225,15 @@ export default function Home() {
                   <PivilleImg src={piville} alt="Pi-Ville" />
                 </animated.div>
               </PivilleImgContainer>
+              <Waypoint
+                onEnter={() => {
+                  setHistoryInView(true);
+                }}
+              />
               <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
             </DreamDiv>
           </HistoryContainer>
         </animated.div>
-
-        <Waypoint
-          onEnter={() => {
-            setHistoryInView(true);
-          }}
-        />
         <RoadmapContainer>
           <animated.div style={productsTextVisibleAnimation}>
             <ProductTopText>로드맵</ProductTopText>
@@ -464,8 +501,8 @@ const Background = styled.div`
   width: 100vw;
   padding-top: 20vh;
   padding-bottom: 20vh;
-  padding-left: 10vw;
-  padding-right: 10vw;
+  padding-left: 3vw;
+  padding-right: 3vw;
   background: #f6fafd;
   background-size: cover;
   display: flex;
@@ -475,7 +512,87 @@ const Background = styled.div`
     padding-top: 20vh;
   }
 `;
+const GogoContainer = styled.div`
+  background-color: white;
+  width: 24vw;
+  height: 16vw;
+  max-width: 420px;
+  max-height: 280px;
+  border-radius: 20px;
+  margin-right: 20px;
+  box-shadow: 10px 10px 50px #00000015;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 50px #00000030;
+  }
+  @media screen and (max-width: 768px) {
+    width: 30vw;
+    height: 20vw;
+    border-radius: 15px;
+    margin-right: 8px;
+  }
+`;
+const SyllableeContainer = styled.div`
+  background-color: white;
+  width: 30vw;
+  height: 20vw;
+  max-width: 525px;
+  max-height: 350px;
+  border-radius: 20px;
+  box-shadow: 10px 10px 50px #00000015;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 50px #00000030;
+  }
+  @media screen and (max-width: 768px) {
+    width: 36vw;
+    height: 24vw;
+    border-radius: 15px;
+  }
+`;
+const KuplaceContainer = styled.div`
+  background-color: white;
+  width: 24vw;
+  height: 16vw;
+  max-width: 420px;
+  max-height: 280px;
+  border-radius: 20px;
+  margin-left: 20px;
+  box-shadow: 10px 10px 50px #00000015;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 10px 10px 50px #00000030;
+  }
+  @media screen and (max-width: 768px) {
+    width: 30vw;
+    height: 20vw;
+    border-radius: 15px;
+    margin-left: 8px;
+  }
+`;
 const Top = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+`;
+const LogoContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -615,6 +732,7 @@ const ProductBoxLeft = styled.div`
   background-color: white;
   border-radius: 20px;
   z-index: 10;
+  cursor: pointer;
   &:hover {
     transform: scale(1.02);
     box-shadow: 10px 10px 50px #00000030;
@@ -697,7 +815,7 @@ const HistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 0px;
 `;
 const HistoryTitle = styled.p`
   font-size: 35px;
@@ -716,6 +834,8 @@ const DreamDiv = styled.div`
 const PivilleImgContainer = styled.div`
   width: 50vw;
   height: 40vw;
+  max-width: 700px;
+  max-height: 560px;
   border-radius: 4vw;
   overflow: hidden;
   @media screen and (max-width: 768px) {
@@ -724,6 +844,7 @@ const PivilleImgContainer = styled.div`
 `;
 const PivilleImg = styled.img`
   width: 60vw;
+  max-width: 840px;
   @media screen and (max-width: 768px) {
     width: 70vw;
   }
