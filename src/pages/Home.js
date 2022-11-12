@@ -411,28 +411,28 @@ export default function Home() {
                   email="contact@glob-up.com"
                   name="강유민"
                   engName="Aiden Kang"
-                  position="Co-founder"
+                  position="Co-Founder"
                 />
                 <PersonCard
                   path="0.jpeg"
                   email="contact@glob-up.com"
                   name="김철수"
                   engName="Charles Kim"
-                  position="Co-founder"
+                  position="Co-Founder"
                 />
                 <PersonCard
                   path="3.jpg"
                   email="contact@glob-up.com"
                   name="박성준"
                   engName="Dominick Park"
-                  position="Co-founder"
+                  position="Co-Founder"
                 />
                 <PersonCard
                   path="4.jpg"
                   email="contact@glob-up.com"
                   name="박재현"
                   engName="Hazel Park"
-                  position="Co-founder"
+                  position="Co-Founder"
                   description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
@@ -440,14 +440,14 @@ export default function Home() {
                   email="contact@glob-up.com"
                   name="심하민"
                   engName="Zoe Shim"
-                  position="Co-founder"
+                  position="Co-Founder"
                 />
                 <PersonCard
                   path="6.jpeg"
                   email="contact@glob-up.com"
                   name="윤재원"
                   engName="Jay Youn"
-                  position="Co-founder"
+                  position="Co-Founder"
                 />
               </PersonBoxContainer>
               <Waypoint
