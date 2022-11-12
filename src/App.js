@@ -4,7 +4,7 @@ import Header from "./components/header";
 
 function App() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#f6fafd" }}>
       <header>
         <Header />
       </header>

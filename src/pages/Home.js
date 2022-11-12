@@ -487,7 +487,7 @@ const Background = styled.div`
   padding-bottom: 20vh;
   padding-left: 5vw;
   padding-right: 5vw;
-  background: #f6fafd;
+  background-color: #f6fafd;
   background-size: cover;
   display: flex;
   flex-direction: column;

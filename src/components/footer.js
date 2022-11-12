@@ -27,6 +27,7 @@ export default function Footer() {
 }
 const FooterBox = styled.div`
   width: 100%;
+  margin-top: 50px;
   /* height: 100px; */
   background-color: #4460ff;
   text-align: center;
