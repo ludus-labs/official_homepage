@@ -11,7 +11,8 @@
   margin: 0 auto;
   width: 24px;
   height: 100px;
-  margin-top: 125px;
+  margin-top: 50px;
+  scale: 0.7;
 }
 
 .m_scroll_arrows {

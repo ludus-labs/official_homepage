@@ -195,6 +195,8 @@ export default function Home() {
             >
               <BannerImg1 src={kuplace_banner} alt="KUplace" />
             </KuplaceContainer>
+          </Top>
+          <MouseContainer>
             <div class="mouse_scroll">
               <div className="mouse">
                 <div className="wheel"></div>
@@ -205,7 +207,7 @@ export default function Home() {
                 <span className="m_scroll_arrows trei"></span>
               </div>
             </div>
-          </Top>
+          </MouseContainer>
         </animated.div>
 
         <animated.div style={historyContainerVisibleAnimation}>
@@ -504,7 +506,7 @@ const Background = styled.div`
   flex-direction: column;
   /* justify-content: center; */
   @media screen and (max-width: 768px) {
-    padding-top: 20vh;
+    padding-top: 100px;
   }
 `;
 const BannerImg1 = styled.img`
@@ -606,6 +608,12 @@ const KuplaceContainer = styled.div`
     border-radius: 15px;
     margin-top: 10px;
     margin-left: 0px;
+  }
+`;
+const MouseContainer = styled.div`
+  opacity: 0;
+  @media screen and (max-width: 768px) {
+    opacity: 1;
   }
 `;
 const Top = styled.div`
