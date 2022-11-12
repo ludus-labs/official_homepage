@@ -527,15 +527,15 @@ const MainImage = styled.img`
   }
 `;
 const ProductTopText = styled.p`
-  margin-top: 100px;
+  margin-top: 50px;
   margin-bottom: 0;
   font-size: 35px;
   font-weight: 700;
   color: black;
-  text-align: center;
+  text-align: right;
   @media screen and (max-width: 768px) {
-    margin-top: 100px;
-    font-size: 30px;
+    margin-top: 45px;
+    font-size: 27px;
   }
 `;
 const ProductTopSubText = styled.p`
@@ -544,9 +544,9 @@ const ProductTopSubText = styled.p`
   font-size: 20px;
   font-weight: 500;
   color: #505050;
-  text-align: center;
+  text-align: right;
   @media screen and (max-width: 768px) {
-    font-size: 13px;
+    font-size: 12px;
   }
 `;
 const RoadmapContainer = styled.div`

@@ -28,7 +28,7 @@ export default function Footer() {
 const FooterBox = styled.div`
   width: 100%;
   /* height: 100px; */
-  background-color: #f6fafd;
+  background-color: #4460ff;
   text-align: center;
   padding: 30px;
   color: whitesmoke;
@@ -43,7 +43,7 @@ const Detail = styled.div`
   } */
 `;
 const P = styled.p`
-  color: #4460ff;
+  color: #f6fafd;
   font-size: 12px;
   line-height: 0.8;
   @media screen and (max-width: 768px) {
