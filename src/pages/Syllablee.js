@@ -11,21 +11,24 @@ const Syllablee = () => {
 
   return (
     <PDFDocumentWrapper>
-      <Document file={syllablee_pdf}>
+      <Document
+        file={syllablee_pdf}
+        loading=<div
+          style={{
+            marginTop: "50vh",
+            marginBottom: "50vh",
+            zIndex: "100",
+            alignItems: "center",
+          }}
+        >
+          <Ring color="#00A68A" width="100px" height="100px" duration="1s" />
+        </div>
+      >
         <Page
           pageNumber={1}
           renderTextLayer={false}
           renderAnnotationLayer={false}
-          loading=<div
-            style={{
-              marginTop: "40vh",
-              marginBottom: "40vh",
-              zIndex: "100",
-              alignItems: "center",
-            }}
-          >
-            <Ring color="#00A68A" width="100px" height="100px" duration="1s" />
-          </div>
+          loading=""
         />
         <Page
           pageNumber={2}
