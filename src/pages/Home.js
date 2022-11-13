@@ -284,6 +284,11 @@ export default function Home() {
                 </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={desdeSeulVisibleAnimation}>
+                <Waypoint
+                  onEnter={() => {
+                    setProductListInView(true);
+                  }}
+                />
                 <ProductBoxLeftContainer
                   marginLeft={isMobile ? "32px" : "130px"}
                 >
@@ -330,11 +335,6 @@ export default function Home() {
                   </ProductBoxLeft>
                 </ProductBoxLeftContainer>
               </animated.div>
-              <Waypoint
-                onEnter={() => {
-                  setProductListInView(true);
-                }}
-              />
               <animated.div style={challengeonVisibleAnimation}>
                 <ProductBoxLeftContainer marginLeft={isMobile ? "8px" : "50px"}>
                   <ProductIconLeft

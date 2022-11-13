@@ -20,11 +20,8 @@ export default function Header() {
             <FontAwesomeIcon icon={faBars} color="white" size="1x" />
           </span>
         </Navbar.Toggle>
-        <Navbar.Collapse
-          style={{ justifySelf: "flex-end" }}
-          id="basic-navbar-nav"
-        >
-          <div className="me-auto" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <div className="me" />
           <Nav>
             <Nav.Link
               href="/people"
