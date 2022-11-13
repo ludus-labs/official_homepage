@@ -21,7 +21,7 @@ export default function Header() {
           </span>
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
-          <div className="me" />
+          <div className="me-auto" />
           <Nav>
             <Nav.Link
               href="/people"
