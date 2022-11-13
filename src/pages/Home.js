@@ -791,6 +791,10 @@ const DreamTitle = styled.p`
 `;
 const DreamDescriptionContainer = styled.div`
   text-align: left;
+  @media screen and (max-width: 768px) {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
 `;
 const DreamDescription = styled.p`
   width: 650px;
@@ -801,7 +805,7 @@ const DreamDescription = styled.p`
   padding-left: 5em;
   text-indent: -5em;
   @media screen and (max-width: 768px) {
-    width: auto;
+    width: 280px;
     font-size: 15px;
   }
 `;
