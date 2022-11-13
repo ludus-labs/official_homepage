@@ -25,32 +25,14 @@ export default function Header() {
           id="basic-navbar-nav"
         >
           <div className="me-auto" />
-          {/* <Nav>
+          <Nav>
             <Nav.Link
-              href="/talk"
-              className={path === "/talk" ? "selected" : ""}
+              href="/people"
+              className={path === "/people" ? "selected" : ""}
             >
-              메뉴 1
+              팀 소개
             </Nav.Link>
-            <Nav.Link
-              href="/introduction"
-              className={path === "/introduction" ? "selected" : ""}
-            >
-              메뉴 2
-            </Nav.Link>
-            <Nav.Link
-              href="/timetable"
-              className={path === "/timetable" ? "selected" : ""}
-            >
-              메뉴 3
-            </Nav.Link>
-            <Nav.Link
-              href="/personnel"
-              className={path === "/personnel" ? "selected" : ""}
-            >
-              메뉴 4
-            </Nav.Link>
-          </Nav> */}
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
