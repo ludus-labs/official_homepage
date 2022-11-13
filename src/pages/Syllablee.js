@@ -19,7 +19,7 @@ const Syllablee = () => {
         marginBottom={"30px"}
         _hover={{ backgroundColor: "#07866F" }}
         onClick={() => {
-          window.open("https://www.syllablee.com");
+          window.open("https://syllablee.com");
         }}
       >
         →
@@ -58,18 +58,6 @@ const Syllablee = () => {
           />
           <Page
             pageNumber={4}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={5}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={6}
             renderTextLayer={false}
             renderAnnotationLayer={false}
             loading=""

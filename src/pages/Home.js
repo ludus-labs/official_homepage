@@ -50,13 +50,6 @@ export default function Home() {
       // y: historyInView ? 20 : 0,
     },
   });
-  const pivilleImgSizeAnimation = useSpring({
-    config: { duration: 600 },
-    delay: 0,
-    to: {
-      scale: historyInView ? 1.1 : 1,
-    },
-  });
   const productsTextVisibleAnimation = useSpring({
     config: { duration: 600 },
     delay: 0,
@@ -223,7 +216,7 @@ export default function Home() {
 
         <animated.div style={historyContainerVisibleAnimation}>
           <HistoryContainer>
-            <HistoryTitle>세상에 우리 존재를 알리기까지...</HistoryTitle>
+            <HistoryTitle>Local to Global.</HistoryTitle>
             <SloganText>글로벌 스타트업, GLOB-UP</SloganText>
             <LogoContainer>
               <Waypoint
@@ -234,18 +227,36 @@ export default function Home() {
               <MainImage src={globup_icon_logo} />
             </LogoContainer>
             <DreamDiv>
-              <PivilleImgContainer>
-                <animated.div style={pivilleImgSizeAnimation}>
-                  <PivilleImg src={piville} alt="Pi-Ville" />
-                </animated.div>
+              <PivilleImgContainer
+                onClick={() => {
+                  window.open(
+                    "https://piville.kr/team/piville_view.asp?p_idx=270&KeyOrder2=CS01&KeyOrderYear=0"
+                  );
+                }}
+              >
+                <PivilleImg src={piville} alt="Pi-Ville" />
               </PivilleImgContainer>
               <DreamTextContainer>
                 <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
-                <DreamDescription>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-                  sagittis turpis et nunc fringilla, nec porta tellus imperdiet.
-                  Curabitur convallis.
-                </DreamDescription>
+                <DreamDescriptionContainer>
+                  <DreamDescription>
+                    - 2022.02: 고려대학교 공간정보 공유 커뮤니티 서비스 KUplace
+                    런칭
+                  </DreamDescription>
+                  <DreamDescription>
+                    - 2022.02: 남미 칠레 온라인 세이프 딜리버리 서비스 Dimple
+                    런칭
+                  </DreamDescription>
+                  <DreamDescription>
+                    - 2022.05: 고려대학교 파이빌 입주
+                  </DreamDescription>
+                  <DreamDescription>
+                    - 2022.08: 대학혁신지원사업 창업동아리 지원
+                  </DreamDescription>
+                  <DreamDescription>
+                    - 2022.11: 링크 KU 창업동아리 지원사업 선정
+                  </DreamDescription>
+                </DreamDescriptionContainer>
               </DreamTextContainer>
             </DreamDiv>
           </HistoryContainer>
@@ -429,39 +440,39 @@ export default function Home() {
             <PersonBoxScroll>
               <PersonBoxContainer>
                 <PersonCard
+                  path="0.jpeg"
+                  email="contact@glob-up.com"
+                  name="김철수"
+                  engName="Charles Kim"
+                  position="CEO"
+                />
+                <PersonCard
                   path="0.png"
                   email="contact@glob-up.com"
                   name="정진욱"
                   engName="Jarvis Jeong"
-                  position="CEO"
+                  position="CTO"
                 />
                 <PersonCard
                   path="2.jpg"
                   email="contact@glob-up.com"
                   name="강유민"
                   engName="Aiden Kang"
-                  position="Co-Founder"
-                />
-                <PersonCard
-                  path="0.jpeg"
-                  email="contact@glob-up.com"
-                  name="김철수"
-                  engName="Charles Kim"
-                  position="Co-Founder"
+                  position="CDO / 개발"
                 />
                 <PersonCard
                   path="3.jpg"
                   email="contact@glob-up.com"
                   name="박성준"
                   engName="Dominick Park"
-                  position="Co-Founder"
+                  position="기획"
                 />
                 <PersonCard
                   path="4.jpg"
                   email="contact@glob-up.com"
                   name="박재현"
                   engName="Hazel Park"
-                  position="Co-Founder"
+                  position="기획"
                   description=<p>-고려대학교 경영학과 재학</p>
                 />
                 <PersonCard
@@ -469,14 +480,14 @@ export default function Home() {
                   email="contact@glob-up.com"
                   name="심하민"
                   engName="Zoe Shim"
-                  position="Co-Founder"
+                  position="개발"
                 />
                 <PersonCard
                   path="6.jpeg"
                   email="contact@glob-up.com"
                   name="윤재원"
                   engName="Jay Youn"
-                  position="Co-Founder"
+                  position="개발"
                 />
               </PersonBoxContainer>
               <Waypoint
@@ -512,6 +523,8 @@ const Background = styled.div`
 const BannerImg1 = styled.img`
   width: 24vw;
   height: 16vw;
+  max-width: 420px;
+  max-height: 280px;
   @media screen and (max-width: 768px) {
     width: 50vw;
     height: auto;
@@ -522,6 +535,8 @@ const BannerImg1 = styled.img`
 const BannerImg2 = styled.img`
   width: 30vw;
   height: 20vw;
+  max-width: 525px;
+  max-height: 350px;
   @media screen and (max-width: 768px) {
     width: 50vw;
     height: auto;
@@ -611,10 +626,12 @@ const KuplaceContainer = styled.div`
   }
 `;
 const MouseContainer = styled.div`
-  opacity: 0;
-  margin-bottom: 15px;
+  /* opacity: 0; */
+  margin-top: 10vh;
+  margin-bottom: 30vh;
   @media screen and (max-width: 768px) {
-    opacity: 1;
+    /* opacity: 1; */
+    margin-bottom: 10vh;
   }
 `;
 const Top = styled.div`
@@ -622,8 +639,10 @@ const Top = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-top: 15vh;
   margin-bottom: 30px;
   @media screen and (max-width: 768px) {
+    margin-top: 0;
     flex-direction: column;
   }
 `;
@@ -647,8 +666,9 @@ const SloganContainer = styled.div`
 `;
 const SloganText = styled.p`
   font-weight: 500;
-  font-size: 30px;
+  font-size: 40px;
   margin-top: 0px;
+  color: #404040;
   @media screen and (max-width: 768px) {
     font-size: 20px;
     text-align: center;
@@ -674,13 +694,13 @@ const MainImage = styled.img`
 const TitleText = styled.p`
   margin-top: 50px;
   margin-bottom: 0;
-  font-size: 45px;
+  font-size: 60px;
   font-weight: 700;
   color: black;
   text-align: center;
   @media screen and (max-width: 768px) {
     margin-top: 45px;
-    font-size: 28px;
+    font-size: 35px;
   }
 `;
 const ProductTopSubText = styled.p`
@@ -742,7 +762,7 @@ const ProductTitle = styled.p`
   margin-top: 0;
   margin-bottom: 0;
   font-size: 24px;
-  font-weight: 500;
+  font-weight: 600;
   color: black;
   @media screen and (max-width: 768px) {
     font-size: 18px;
@@ -765,12 +785,12 @@ const HistoryContainer = styled.div`
   margin-top: 0px;
 `;
 const HistoryTitle = styled.p`
-  font-size: 45px;
+  font-size: 70px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
   @media screen and (max-width: 768px) {
-    font-size: 28px;
+    font-size: 40px;
   }
 `;
 const DreamDiv = styled.div`
@@ -790,6 +810,9 @@ const PivilleImgContainer = styled.div`
   max-height: 560px;
   border-radius: 3.2vw;
   overflow: hidden;
+  :hover {
+    box-shadow: 3px 3px 30px #00000030;
+  }
   @media screen and (max-width: 768px) {
     width: 70vw;
     height: 40vw;
@@ -799,6 +822,12 @@ const PivilleImgContainer = styled.div`
 const PivilleImg = styled.img`
   width: 40vw;
   max-width: 840px;
+  transition: transform 0.5s;
+  cursor: pointer;
+  :hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+  }
   @media screen and (max-width: 768px) {
     width: 70vw;
   }
@@ -814,24 +843,31 @@ const DreamTextContainer = styled.div`
   }
 `;
 const DreamTitle = styled.p`
-  font-size: 25px;
-  font-weight: 500;
-  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 0px;
   margin-bottom: 4px;
   color: #404040;
   text-align: left;
   @media screen and (max-width: 768px) {
-    font-size: 20px;
+    margin-top: 10px;
+    font-size: 24px;
     text-align: center;
   }
 `;
+const DreamDescriptionContainer = styled.div`
+  text-align: left;
+`;
 const DreamDescription = styled.p`
-  width: 300px;
-  font-size: 20px;
+  width: 650px;
+  font-size: 23px;
   font-weight: 400;
   color: #404040;
   text-align: left;
+  padding-left: 5em;
+  text-indent: -5em;
   @media screen and (max-width: 768px) {
+    width: auto;
     font-size: 15px;
   }
 `;
@@ -839,9 +875,13 @@ const ProductBoxLeftContainer = styled.div`
   width: fit-content;
   display: flex;
   flex-direction: row;
-  margin-top: 15px;
-  transform: scale(0.9);
+  margin-top: 40px;
+  transform: scale(1.2);
   margin-left: ${(props) => props.marginLeft};
+  @media screen and (max-width: 768px) {
+    margin-top: 18px;
+    transform: scale(1.05);
+  }
 `;
 const ProductBoxLeft = styled.div`
   display: flex;
@@ -877,12 +917,12 @@ const Line = styled.div`
   top: 20px;
   background: linear-gradient(#4460ff10, #4460ff);
   width: 15px;
-  height: 1370px;
+  height: 1580px;
   z-index: 0;
   border-radius: 100px;
   transform: translate(-50%);
   @media screen and (max-width: 768px) {
-    height: 920px;
+    height: 940px;
   }
 `;
 const TeamCultureContainer = styled.div`
@@ -895,8 +935,8 @@ const TeamCultureContainer = styled.div`
   }
 `;
 const TeamCultureImg = styled.img`
-  width: 50vw;
-  max-width: 50vh;
+  width: 60vw;
+  max-width: 60vh;
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 80vw;
@@ -912,8 +952,8 @@ const WhatIsContainer = styled.div`
   }
 `;
 const WhatIsImg = styled.img`
-  width: 40vw;
-  max-width: 50vh;
+  width: 60vw;
+  max-width: 60vh;
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 70vw;

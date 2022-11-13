@@ -8,9 +8,8 @@ export default function Footer() {
       <Row style={{ alignItems: "center" }}>
         <Col>
           <Detail>
-            <P>대표자명 | 정진욱</P>
             <P>주소 | 서울특별시 성북구 안암로 145, 고려대학교 파이빌 305호</P>
-            <P>010 2481 8958 · contact@glob-up.com</P>
+            <P>contact@glob-up.com</P>
             {/* <p>COPYRIGHT &copy; 제일법무 all Rights Reserved </p> */}
           </Detail>
         </Col>
