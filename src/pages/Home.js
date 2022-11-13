@@ -855,7 +855,7 @@ const Line = styled.div`
   top: 20px;
   background: linear-gradient(#4460ff10, #4460ff);
   width: 15px;
-  height: 1580px;
+  height: 1600px;
   z-index: 0;
   border-radius: 100px;
   transform: translate(-50%);
