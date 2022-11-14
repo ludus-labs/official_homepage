@@ -36,14 +36,14 @@ export default function Home() {
   });
 
   const mainImageVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 0,
     to: {
       opacity: topInView ? 1 : 0,
     },
   });
   const historyContainerVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 0,
     to: {
       opacity: historyInView ? 1 : 0,
@@ -51,14 +51,14 @@ export default function Home() {
     },
   });
   const productsTextVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 0,
     to: {
       opacity: productListInView ? 1 : 0,
     },
   });
   const tumoleVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 50,
     from: {
       x: -20,
@@ -69,7 +69,7 @@ export default function Home() {
     },
   });
   const desdeSeulVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 100,
     from: {
       x: -20,
@@ -80,7 +80,7 @@ export default function Home() {
     },
   });
   const tapVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 150,
     from: {
       x: -20,
@@ -91,7 +91,7 @@ export default function Home() {
     },
   });
   const dimpleVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 200,
     from: {
       x: -20,
@@ -102,7 +102,7 @@ export default function Home() {
     },
   });
   const challengeonVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 250,
     from: {
       x: -20,
@@ -113,7 +113,7 @@ export default function Home() {
     },
   });
   const kuplaceVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 300,
     from: {
       x: -20,
@@ -124,7 +124,7 @@ export default function Home() {
     },
   });
   const gogoVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 350,
     from: {
       x: -20,
@@ -135,7 +135,7 @@ export default function Home() {
     },
   });
   const syllableeVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 400,
     from: {
       x: -20,
@@ -146,14 +146,14 @@ export default function Home() {
     },
   });
   const lineVisibleAnimation = useSpring({
-    config: { duration: 150 },
+    config: { duration: 300 },
     delay: 0,
     to: {
       opacity: productListInView ? 1 : 0,
     },
   });
   const cultureVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 0,
     to: {
       opacity: cultureInView ? 1 : 0,
@@ -161,7 +161,7 @@ export default function Home() {
   });
 
   const peopleVisibleAnimation = useSpring({
-    config: { duration: 300 },
+    config: { duration: 500 },
     delay: 0,
     to: {
       opacity: peopleInView ? 1 : 0,
