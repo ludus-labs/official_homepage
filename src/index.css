@@ -6,8 +6,12 @@ body {
   min-height: 100%;
 }
 .selected {
-  font-weight: bold;
-  color: #cad3c8 !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+}
+.not-selected {
+  font-weight: 600 !important;
+  color: #ffffffe0 !important;
 }
 .underline {
   text-decoration: underline;

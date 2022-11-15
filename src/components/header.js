@@ -25,7 +25,7 @@ export default function Header() {
           <Nav>
             <Nav.Link
               href="/people"
-              className={path === "/people" ? "selected" : ""}
+              className={path === "/people" ? "selected" : "not-selected"}
             >
               팀 소개
             </Nav.Link>
