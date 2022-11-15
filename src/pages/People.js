@@ -75,20 +75,14 @@ const PeopleContainer = styled.div`
   height: fit-content;
   padding-bottom: 10px;
   border-radius: 25px;
-  background-color: #4460ff;
-  scale: 0.9;
-  @media screen and (max-width: 768px) {
-    margin-top: 100px;
-    margin-left: 0;
-    margin-right: 0;
-  }
+  align-items: center;
+  scale: 1;
 `;
 const PeopleTitle = styled.p`
-  margin-top: 30px;
-  margin-left: 40px;
-  font-size: 25px;
+  margin-top: 0px;
+  font-size: 40px;
   font-weight: 700;
-  color: white;
+  color: #4460ff;
 `;
 const PersonBoxScroll = styled.div`
   overflow-x: scroll;
@@ -99,10 +93,8 @@ const PersonBoxContainer = styled.div`
   width: fit-content;
   padding-top: 20px;
   padding-bottom: 30px;
-  padding-left: 40px;
-  padding-right: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 `;
 
 export default People;

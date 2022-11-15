@@ -6,9 +6,11 @@ export default function PersonCard({ path, email, name, engName, position }) {
     <A href={"mailto:" + email}>
       <Box>
         <ProfileImg src={require(`../assets/images/profile/${path}`)} />
-        <Name>{name}</Name>
-        <EngName>{engName}</EngName>
-        <Position>{position}</Position>
+        <TextContainer>
+          <Name>{name}</Name>
+          <EngName>{engName}</EngName>
+          <Position>{position}</Position>
+        </TextContainer>
       </Box>
     </A>
   );
@@ -18,64 +20,77 @@ const A = styled.a`
 `;
 const Box = styled.div`
   display: flex;
-  flex-direction: column;
-  margin-right: 20px;
-  width: 200px;
-  height: 300px;
-  padding: 20px;
+  flex-direction: row;
+  width: 450px;
+  height: 250px;
+  padding: 30px;
   box-shadow: 0px 10px 20px #00000040;
   background-color: white;
-  border-radius: 10px;
-  align-items: center;
+  border-radius: 30px;
+  align-items: flex-start;
   z-index: 10;
+  scale: 0.9;
   &:hover {
     transform: scale(1.02);
     box-shadow: 0px 10px 20px #00000060;
   }
   @media screen and (max-width: 768px) {
-    width: 160px;
-    height: 240px;
-    padding: 12px;
+    flex-direction: column;
+    align-items: center;
+    width: 300px;
+    height: 460px;
+    padding: 24px;
   }
 `;
 const ProfileImg = styled.img`
-  width: 90px;
-  height: 90px;
-  border-radius: 45px;
-  margin-top: 30px;
+  width: 150px;
+  height: 150px;
+  border-radius: 90px;
+  margin-top: 20px;
   z-index: 20;
   @media screen and (max-width: 768px) {
-    width: 60px;
-    height: 60px;
+    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+  }
+`;
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 20px;
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    margin-left: 0px;
   }
 `;
 const Name = styled.p`
-  margin-top: 5px;
+  margin-top: 20px;
   margin-bottom: 0;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 32px;
   color: #484848;
   @media screen and (max-width: 768px) {
-    font-size: 16px;
+    font-size: 32px;
   }
 `;
 const EngName = styled.p`
   margin-top: 0;
   margin-bottom: 0;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 28px;
   color: #484848;
   @media screen and (max-width: 768px) {
-    font-size: 14px;
+    font-size: 28px;
   }
 `;
 const Position = styled.p`
   margin-top: 10px;
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 24px;
   color: #484848;
   @media screen and (max-width: 768px) {
-    font-size: 12px;
+    font-size: 24px;
   }
 `;
