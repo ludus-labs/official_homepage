@@ -256,21 +256,23 @@ export default function Home() {
                 <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
                 <DreamDescriptionContainer>
                   <DreamDescription>
-                    - 2022.02:{" "}
-                    <b>고려대학교 공간정보 공유 커뮤니티 서비스 KUplace 런칭</b>
+                    <YearText>- 2022.02:</YearText> 고려대학교 공간정보 공유
+                    커뮤니티 서비스 KUplace 런칭
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.02:{" "}
-                    <b>남미 칠레 온라인 세이프 딜리버리 서비스 Dimple 런칭</b>
+                    <YearText>- 2022.02:</YearText> 남미 칠레 온라인 세이프
+                    딜리버리 서비스 Dimple 런칭
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.05: <b>고려대학교 파이빌 입주</b>
+                    <YearText>- 2022.05:</YearText> 고려대학교 파이빌 입주
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.08: <b>대학혁신지원사업 창업동아리 지원</b>
+                    <YearText>- 2022.08:</YearText> 대학혁신지원사업 창업동아리
+                    지원
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.11: <b>링크 KU 창업동아리 지원사업 선정</b>
+                    <YearText>- 2022.11:</YearText> 링크 KU 창업동아리 지원사업
+                    선정
                   </DreamDescription>
                 </DreamDescriptionContainer>
               </DreamTextContainer>
@@ -770,7 +772,7 @@ const PivilleImgContainer = styled.div`
   width: 60vw;
   max-width: 80vh;
   max-height: 55vh;
-  border-radius: 3.2vw;
+  border-radius: 0vw;
   overflow: hidden;
   :hover {
     box-shadow: 3px 3px 30px #00000030;
@@ -828,13 +830,16 @@ const DreamDescriptionContainer = styled.div`
 const DreamDescription = styled.p`
   font-size: 22px;
   font-weight: 400;
-  color: #404040;
+  color: black;
   text-align: left;
   padding-left: 5em;
   text-indent: -5em;
   @media screen and (max-width: 768px) {
     font-size: 15px;
   }
+`;
+const YearText = styled.span`
+  opacity: 0.5;
 `;
 const ProductBoxLeftContainer = styled.div`
   width: fit-content;
