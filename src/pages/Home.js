@@ -772,7 +772,7 @@ const PivilleImgContainer = styled.div`
   width: 60vw;
   max-width: 80vh;
   max-height: 55vh;
-  border-radius: 0vw;
+  border-radius: 3.5vw;
   overflow: hidden;
   :hover {
     box-shadow: 3px 3px 30px #00000030;
