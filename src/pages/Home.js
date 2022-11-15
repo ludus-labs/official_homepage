@@ -908,7 +908,7 @@ const TeamCultureContainer = styled.div`
 `;
 const TeamCultureImg = styled.img`
   width: 75vw;
-  max-width: 80vh;
+  max-width: 90vh;
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 80vw;
@@ -924,8 +924,8 @@ const WhatIsContainer = styled.div`
   }
 `;
 const WhatIsImg = styled.img`
-  width: 70vw;
-  max-width: 75vh;
+  width: 75vw;
+  max-width: 80vh;
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 70vw;
