@@ -28,6 +28,7 @@ export default function Home() {
   const navigate = useNavigate();
   const [topInView, setTopInView] = useState(false);
   const [historyInView, setHistoryInView] = useState(false);
+  const [dreamInView, setDreamInView] = useState(false);
   const [productListInView, setProductListInView] = useState(false);
   const [cultureInView, setCultureInView] = useState(false);
   const [peopleInView, setPeopleInView] = useState(false);
@@ -47,6 +48,14 @@ export default function Home() {
     delay: 0,
     to: {
       opacity: historyInView ? 1 : 0,
+      // y: historyInView ? 20 : 0,
+    },
+  });
+  const dreamDivVisibleAnimation = useSpring({
+    config: { duration: 500 },
+    delay: 0,
+    to: {
+      opacity: dreamInView ? 1 : 0,
       // y: historyInView ? 20 : 0,
     },
   });
@@ -214,8 +223,8 @@ export default function Home() {
           </MouseContainer>
         </animated.div>
 
-        <animated.div style={historyContainerVisibleAnimation}>
-          <HistoryContainer>
+        <HistoryContainer>
+          <animated.div style={historyContainerVisibleAnimation}>
             <HistoryTitle>Local to Global.</HistoryTitle>
             <SloganText>글로벌 스타트업, GLOB-UP</SloganText>
             <LogoContainer>
@@ -226,6 +235,8 @@ export default function Home() {
               />
               <MainImage src={globup_icon_logo} />
             </LogoContainer>
+          </animated.div>
+          <animated.div style={dreamDivVisibleAnimation}>
             <DreamDiv>
               <PivilleImgContainer
                 onClick={() => {
@@ -234,6 +245,11 @@ export default function Home() {
                   );
                 }}
               >
+                <Waypoint
+                  onEnter={() => {
+                    setDreamInView(true);
+                  }}
+                />
                 <PivilleImg src={piville} alt="Pi-Ville" />
               </PivilleImgContainer>
               <DreamTextContainer>
@@ -259,8 +275,9 @@ export default function Home() {
                 </DreamDescriptionContainer>
               </DreamTextContainer>
             </DreamDiv>
-          </HistoryContainer>
-        </animated.div>
+          </animated.div>
+        </HistoryContainer>
+
         <RoadmapContainer>
           <animated.div style={productsTextVisibleAnimation}>
             <TitleText>로드맵</TitleText>
@@ -352,7 +369,7 @@ export default function Home() {
                 </ProductBoxLeftContainer>
               </animated.div>
               <animated.div style={kuplaceVisibleAnimation}>
-                <ProductBoxLeftContainer
+                <ProductBoxLeftNewContainer
                   marginLeft={isMobile ? "30px" : "100px"}
                 >
                   <ProductIconLeft src={kuplace_icon} shadowColor="#7644FF80" />
@@ -360,6 +377,7 @@ export default function Home() {
                     onClick={() => {
                       navigate(`/kuplace`);
                     }}
+                    bgColor={"#FCE8EB"}
                   >
                     <ProductTextContainer>
                       <ProductTitle>KUplace</ProductTitle>
@@ -368,15 +386,18 @@ export default function Home() {
                       </ProductDescription>
                     </ProductTextContainer>
                   </PointerProductBoxLeft>
-                </ProductBoxLeftContainer>
+                </ProductBoxLeftNewContainer>
               </animated.div>
               <animated.div style={gogoVisibleAnimation}>
-                <ProductBoxLeftContainer marginLeft={isMobile ? "0px" : "0px"}>
+                <ProductBoxLeftNewContainer
+                  marginLeft={isMobile ? "0px" : "0px"}
+                >
                   <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
                   <PointerProductBoxLeft
                     onClick={() => {
                       navigate(`/gogo`);
                     }}
+                    bgColor={"#FFE8E0"}
                   >
                     <ProductTextContainer>
                       <ProductTitle>ㄱ?(GOGO)</ProductTitle>
@@ -385,10 +406,10 @@ export default function Home() {
                       </ProductDescription>
                     </ProductTextContainer>
                   </PointerProductBoxLeft>
-                </ProductBoxLeftContainer>
+                </ProductBoxLeftNewContainer>
               </animated.div>
               <animated.div style={syllableeVisibleAnimation}>
-                <ProductBoxLeftContainer
+                <ProductBoxLeftNewContainer
                   marginLeft={isMobile ? "20px" : "70px"}
                 >
                   <ProductIconLeft
@@ -399,6 +420,7 @@ export default function Home() {
                     onClick={() => {
                       navigate(`/syllablee`);
                     }}
+                    bgColor={"#E2EEEC"}
                   >
                     <ProductTextContainer>
                       <ProductTitle>SYLLABLEE</ProductTitle>
@@ -407,7 +429,7 @@ export default function Home() {
                       </ProductDescription>
                     </ProductTextContainer>
                   </PointerProductBoxLeft>
-                </ProductBoxLeftContainer>
+                </ProductBoxLeftNewContainer>
               </animated.div>
             </ProductList>
             <animated.div style={lineVisibleAnimation}>
@@ -565,7 +587,7 @@ const MouseContainer = styled.div`
   margin-bottom: 30vh;
   @media screen and (max-width: 768px) {
     /* opacity: 1; */
-    margin-bottom: 10vh;
+    margin-bottom: 20vh;
   }
 `;
 const Top = styled.div`
@@ -585,9 +607,11 @@ const LogoContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 30vh;
   @media screen and (max-width: 768px) {
     flex-direction: column;
     align-items: center;
+    margin-bottom: 20vh;
   }
 `;
 const SloganContainer = styled.div`
@@ -652,8 +676,11 @@ const RoadmapContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 100px;
+  margin-bottom: 30vh;
   transform: scale(1);
+  @media screen and (max-width: 768px) {
+    margin-bottom: 20vh;
+  }
 `;
 const ProductListContainer = styled.div`
   display: flex;
@@ -717,6 +744,7 @@ const HistoryContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 0px;
+  margin-bottom: 30vh;
 `;
 const HistoryTitle = styled.p`
   font-size: 70px;
@@ -729,7 +757,8 @@ const HistoryTitle = styled.p`
 `;
 const DreamDiv = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   margin-top: 100px;
   @media screen and (max-width: 768px) {
     flex-direction: column;
@@ -738,10 +767,9 @@ const DreamDiv = styled.div`
   }
 `;
 const PivilleImgContainer = styled.div`
-  width: 30vw;
-  height: 22vw;
-  max-width: 700px;
-  max-height: 560px;
+  width: 60vw;
+  max-width: 80vh;
+  max-height: 55vh;
   border-radius: 3.2vw;
   overflow: hidden;
   :hover {
@@ -754,8 +782,7 @@ const PivilleImgContainer = styled.div`
   }
 `;
 const PivilleImg = styled.img`
-  width: 40vw;
-  max-width: 840px;
+  width: 80vw;
   transition: transform 0.5s;
   cursor: pointer;
   :hover {
@@ -769,10 +796,12 @@ const PivilleImg = styled.img`
 const DreamTextContainer = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   margin-left: 40px;
+  margin-top: 20px;
   @media screen and (max-width: 768px) {
     margin-left: 0px;
+    margin-top: 0px;
     align-items: center;
   }
 `;
@@ -781,7 +810,7 @@ const DreamTitle = styled.p`
   font-weight: 600;
   margin-top: 0px;
   margin-bottom: 4px;
-  color: #404040;
+  color: black;
   text-align: left;
   @media screen and (max-width: 768px) {
     margin-top: 10px;
@@ -815,11 +844,17 @@ const ProductBoxLeftContainer = styled.div`
   flex-direction: row;
   margin-top: 40px;
   transform: scale(1.2);
+  filter: blur(0px);
+  opacity: 0.8;
   margin-left: ${(props) => props.marginLeft};
   @media screen and (max-width: 768px) {
     margin-top: 18px;
     transform: scale(1.05);
   }
+`;
+const ProductBoxLeftNewContainer = styled(ProductBoxLeftContainer)`
+  filter: blur(0px);
+  opacity: 1;
 `;
 const ProductBoxLeft = styled.div`
   display: flex;
@@ -829,11 +864,12 @@ const ProductBoxLeft = styled.div`
   margin-bottom: 0px;
   padding: 0px;
   padding-left: 46px;
-  box-shadow: 10px 10px 50px #00000015;
-  background-color: white;
+  box-shadow: 10px 10px 50px #00000000;
+  background: rgba(255, 255, 255, 1);
   border-radius: 20px;
   align-items: center;
   z-index: 10;
+  backdrop-filter: blur(14px);
   @media screen and (max-width: 768px) {
     padding: 0px;
     padding-left: 32px;
@@ -844,9 +880,10 @@ const ProductBoxLeft = styled.div`
 `;
 const PointerProductBoxLeft = styled(ProductBoxLeft)`
   cursor: pointer;
+  background: ${(props) => props.bgColor};
   &:hover {
     transform: scale(1.02);
-    box-shadow: 10px 10px 50px #00000030;
+    box-shadow: 5px 5px 50px ${(props) => props.bgColor};
   }
 `;
 const Line = styled.div`
@@ -873,8 +910,8 @@ const TeamCultureContainer = styled.div`
   }
 `;
 const TeamCultureImg = styled.img`
-  width: 60vw;
-  max-width: 60vh;
+  width: 75vw;
+  max-width: 80vh;
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 80vw;
@@ -890,8 +927,8 @@ const WhatIsContainer = styled.div`
   }
 `;
 const WhatIsImg = styled.img`
-  width: 60vw;
-  max-width: 60vh;
+  width: 70vw;
+  max-width: 75vh;
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 70vw;
