@@ -878,7 +878,9 @@ const ProductBoxLeft = styled.div`
 `;
 const PointerProductBoxLeft = styled(ProductBoxLeft)`
   cursor: pointer;
-  background: ${(props) => props.bgColor};
+  background: white;
+  border-width: 5px;
+  border-color: ${(props) => props.bgColor};
   &:hover {
     transform: scale(1.02);
     box-shadow: 5px 5px 50px ${(props) => props.bgColor};
