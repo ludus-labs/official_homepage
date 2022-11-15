@@ -24,7 +24,7 @@ const Box = styled.div`
   width: 450px;
   height: 250px;
   padding: 30px;
-  box-shadow: 0px 10px 20px #00000040;
+  box-shadow: 0px 10px 20px #00000020;
   background-color: white;
   border-radius: 30px;
   align-items: flex-start;
@@ -32,7 +32,7 @@ const Box = styled.div`
   scale: 0.9;
   &:hover {
     transform: scale(1.02);
-    box-shadow: 0px 10px 20px #00000060;
+    box-shadow: 0px 10px 20px #00000040;
   }
   @media screen and (max-width: 768px) {
     flex-direction: column;
