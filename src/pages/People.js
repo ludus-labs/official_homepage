@@ -85,9 +85,9 @@ const PeopleTitle = styled.p`
   color: #4460ff;
 `;
 const PersonBoxScroll = styled.div`
-  overflow-x: scroll;
+  /* overflow-x: scroll;
   overflow-y: hidden;
-  white-space: nowrap;
+  white-space: nowrap; */
 `;
 const PersonBoxContainer = styled.div`
   width: fit-content;
