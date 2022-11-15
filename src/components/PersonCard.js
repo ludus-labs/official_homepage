@@ -34,6 +34,10 @@ const Box = styled.div`
     transform: scale(1.02);
     box-shadow: 0px 10px 20px #00000020;
   }
+  @media screen and (max-width: 620px) {
+    width: 160px;
+    height: 240px;
+  }
 `;
 const ProfileImg = styled.img`
   width: 200px;
@@ -42,6 +46,10 @@ const ProfileImg = styled.img`
   margin-top: 0px;
   margin-bottom: 0px;
   z-index: 20;
+  @media screen and (max-width: 620px) {
+    width: 160px;
+    height: 160px;
+  }
 `;
 const TextContainer = styled.div`
   display: flex;
@@ -55,6 +63,10 @@ const Name = styled.p`
   font-weight: 700;
   font-size: 28px;
   color: #484848;
+  @media screen and (max-width: 620px) {
+    margin-top: 8px;
+    font-size: 22px;
+  }
 `;
 const EngName = styled.p`
   margin-top: -5px;
@@ -69,4 +81,7 @@ const Position = styled.p`
   font-weight: 500;
   font-size: 22px;
   color: #484848;
+  @media screen and (max-width: 620px) {
+    font-size: 18px;
+  }
 `;

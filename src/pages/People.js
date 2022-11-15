@@ -82,6 +82,9 @@ const PeopleTitle = styled.p`
   font-size: 40px;
   font-weight: 700;
   color: #4460ff;
+  @media screen and (max-width: 620px) {
+    font-size: 30px;
+  }
 `;
 const PersonBoxContainer = styled.div`
   display: grid;
@@ -93,7 +96,7 @@ const PersonBoxContainer = styled.div`
   @media screen and (max-width: 620px) {
     grid-template-columns: repeat(2, 1fr);
   }
-  @media screen and (max-width: 410px) {
+  @media screen and (max-width: 320px) {
     grid-template-columns: repeat(1, 1fr);
   }
 `;
