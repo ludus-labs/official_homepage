@@ -3,16 +3,16 @@ import styled from "styled-components";
 
 export default function PersonCard({ path, email, name, engName, position }) {
   return (
-    <A href={"mailto:" + email}>
-      <Box>
-        <ProfileImg src={require(`../assets/images/profile/${path}`)} />
-        <TextContainer>
-          <Name>{name}</Name>
-          {/* <EngName>{engName}</EngName> */}
-          <Position>{position}</Position>
-        </TextContainer>
-      </Box>
-    </A>
+    // <A href={"mailto:" + email}>
+    <Box>
+      <ProfileImg src={require(`../assets/images/profile/${path}`)} />
+      <TextContainer>
+        <Name>{name}</Name>
+        {/* <EngName>{engName}</EngName> */}
+        <Position>{position}</Position>
+      </TextContainer>
+    </Box>
+    // </A>
   );
 }
 const A = styled.a`
