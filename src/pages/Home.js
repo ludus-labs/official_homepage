@@ -842,7 +842,6 @@ const ProductBoxLeftContainer = styled.div`
   flex-direction: row;
   margin-top: 40px;
   transform: scale(1.2);
-  filter: blur(0px);
   opacity: 0.8;
   margin-left: ${(props) => props.marginLeft};
   @media screen and (max-width: 768px) {
@@ -851,7 +850,6 @@ const ProductBoxLeftContainer = styled.div`
   }
 `;
 const ProductBoxLeftNewContainer = styled(ProductBoxLeftContainer)`
-  filter: blur(0px);
   opacity: 1;
 `;
 const ProductBoxLeft = styled.div`
@@ -867,7 +865,6 @@ const ProductBoxLeft = styled.div`
   border-radius: 20px;
   align-items: center;
   z-index: 10;
-  backdrop-filter: blur(14px);
   @media screen and (max-width: 768px) {
     padding: 0px;
     padding-left: 32px;
