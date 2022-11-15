@@ -256,21 +256,21 @@ export default function Home() {
                 <DreamTitle>Korea Univ.에서 시작된 꿈</DreamTitle>
                 <DreamDescriptionContainer>
                   <DreamDescription>
-                    - 2022.02: 고려대학교 공간정보 공유 커뮤니티 서비스 KUplace
-                    런칭
+                    - 2022.02:{" "}
+                    <b>고려대학교 공간정보 공유 커뮤니티 서비스 KUplace 런칭</b>
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.02: 남미 칠레 온라인 세이프 딜리버리 서비스 Dimple
-                    런칭
+                    - 2022.02:{" "}
+                    <b>남미 칠레 온라인 세이프 딜리버리 서비스 Dimple 런칭</b>
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.05: 고려대학교 파이빌 입주
+                    - 2022.05: <b>고려대학교 파이빌 입주</b>
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.08: 대학혁신지원사업 창업동아리 지원
+                    - 2022.08: <b>대학혁신지원사업 창업동아리 지원</b>
                   </DreamDescription>
                   <DreamDescription>
-                    - 2022.11: 링크 KU 창업동아리 지원사업 선정
+                    - 2022.11: <b>링크 KU 창업동아리 지원사업 선정</b>
                   </DreamDescription>
                 </DreamDescriptionContainer>
               </DreamTextContainer>
@@ -392,26 +392,6 @@ export default function Home() {
                 <ProductBoxLeftNewContainer
                   marginLeft={isMobile ? "0px" : "0px"}
                 >
-                  <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
-                  <PointerProductBoxLeft
-                    onClick={() => {
-                      navigate(`/gogo`);
-                    }}
-                    bgColor={"#FFE8E0"}
-                  >
-                    <ProductTextContainer>
-                      <ProductTitle>ㄱ?(GOGO)</ProductTitle>
-                      <ProductDescription>
-                        커뮤니케이션 이니시에이터
-                      </ProductDescription>
-                    </ProductTextContainer>
-                  </PointerProductBoxLeft>
-                </ProductBoxLeftNewContainer>
-              </animated.div>
-              <animated.div style={syllableeVisibleAnimation}>
-                <ProductBoxLeftNewContainer
-                  marginLeft={isMobile ? "20px" : "70px"}
-                >
                   <ProductIconLeft
                     src={syllablee_icon}
                     shadowColor="#00000020"
@@ -426,6 +406,26 @@ export default function Home() {
                       <ProductTitle>SYLLABLEE</ProductTitle>
                       <ProductDescription>
                         구독형 학원 마케팅 서비스
+                      </ProductDescription>
+                    </ProductTextContainer>
+                  </PointerProductBoxLeft>
+                </ProductBoxLeftNewContainer>
+              </animated.div>
+              <animated.div style={syllableeVisibleAnimation}>
+                <ProductBoxLeftNewContainer
+                  marginLeft={isMobile ? "20px" : "70px"}
+                >
+                  <ProductIconLeft src={gogo_icon} shadowColor="#e9967a80" />
+                  <PointerProductBoxLeft
+                    onClick={() => {
+                      navigate(`/gogo`);
+                    }}
+                    bgColor={"#FFE8E0"}
+                  >
+                    <ProductTextContainer>
+                      <ProductTitle>ㄱ?(GOGO)</ProductTitle>
+                      <ProductDescription>
+                        커뮤니케이션 이니시에이터
                       </ProductDescription>
                     </ProductTextContainer>
                   </PointerProductBoxLeft>
@@ -807,7 +807,7 @@ const DreamTextContainer = styled.div`
 `;
 const DreamTitle = styled.p`
   font-size: 30px;
-  font-weight: 600;
+  font-weight: 700;
   margin-top: 0px;
   margin-bottom: 4px;
   color: black;
@@ -826,15 +826,13 @@ const DreamDescriptionContainer = styled.div`
   }
 `;
 const DreamDescription = styled.p`
-  width: 650px;
-  font-size: 23px;
+  font-size: 22px;
   font-weight: 400;
   color: #404040;
   text-align: left;
   padding-left: 5em;
   text-indent: -5em;
   @media screen and (max-width: 768px) {
-    width: 280px;
     font-size: 15px;
   }
 `;
