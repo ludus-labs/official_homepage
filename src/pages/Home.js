@@ -189,17 +189,17 @@ export default function Home() {
             />
             <GogoContainer
               onClick={() => {
-                navigate(`/gogo`);
-              }}
-            >
-              <BannerImg1 src={gogo_banner} alt="GOGO" />
-            </GogoContainer>
-            <SyllableeContainer
-              onClick={() => {
                 navigate(`/syllablee`);
               }}
             >
-              <BannerImg2 src={syllablee_banner} alt="SYLLABLEE" />
+              <BannerImg1 src={syllablee_banner} alt="SYLLABLEE" />
+            </GogoContainer>
+            <SyllableeContainer
+              onClick={() => {
+                navigate(`/gogo`);
+              }}
+            >
+              <BannerImg2 src={gogo_banner} alt="GOGO" />
             </SyllableeContainer>
             <KuplaceContainer
               onClick={() => {
