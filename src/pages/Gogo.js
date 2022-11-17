@@ -5,6 +5,7 @@ import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
 import gogo_pdf from "../assets/pdf/gogo_pdf.pdf";
 import { FaGooglePlay } from "react-icons/fa";
+import { FaApple } from "react-icons/fa";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Gogo = () => {
@@ -18,7 +19,7 @@ const Gogo = () => {
         color={"white"}
         fontSize={"20px"}
         marginTop={"5px"}
-        marginBottom={"30px"}
+        marginBottom={"5px"}
         _hover={{ backgroundColor: "#CE6846" }}
         onClick={() => {
           window.open(
@@ -26,8 +27,24 @@ const Gogo = () => {
           );
         }}
       >
-        <FaGooglePlay size="20" color="white" style={{ marginRight: 5 }} />
+        <FaGooglePlay size="15" color="white" style={{ marginRight: 5 }} />
         Google Play
+      </Button>
+      <Button
+        width={"200px"}
+        borderRadius={"50px"}
+        backgroundColor={"#E9967A"}
+        color={"white"}
+        fontSize={"20px"}
+        marginTop={"5px"}
+        marginBottom={"30px"}
+        _hover={{ backgroundColor: "#CE6846" }}
+        onClick={() => {
+          alert("App Store 검토 중입니다.\n곧 출시되니 조금만 기다려주세요 :)");
+        }}
+      >
+        <FaApple size="20" color="white" style={{ marginRight: 5 }} />
+        App Store
       </Button>
       <div
         style={{
