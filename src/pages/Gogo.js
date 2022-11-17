@@ -4,6 +4,7 @@ import { Ring } from "react-cssfx-loading";
 import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
 import gogo_pdf from "../assets/pdf/gogo_pdf.pdf";
+import { FaGooglePlay } from "react-icons/fa";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 const Gogo = () => {
@@ -11,18 +12,22 @@ const Gogo = () => {
     <Background>
       <Title>ㄱ?(GOGO)</Title>
       <Button
-        width={"100px"}
+        width={"200px"}
         borderRadius={"50px"}
         backgroundColor={"#E9967A"}
         color={"white"}
-        fontSize={"30px"}
+        fontSize={"20px"}
+        marginTop={"5px"}
         marginBottom={"30px"}
         _hover={{ backgroundColor: "#CE6846" }}
         onClick={() => {
-          window.open("https://");
+          window.open(
+            "https://play.google.com/store/apps/details?id=com.globup.gogo&pli=1"
+          );
         }}
       >
-        →
+        <FaGooglePlay size="20" color="white" style={{ marginRight: 5 }} />
+        Google Play
       </Button>
       <div
         style={{

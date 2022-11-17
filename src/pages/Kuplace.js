@@ -16,6 +16,7 @@ const Kuplace = () => {
         backgroundColor={"#FF445E"}
         color={"white"}
         fontSize={"30px"}
+        marginTop={"5px"}
         marginBottom={"30px"}
         _hover={{ backgroundColor: "#DF1735" }}
         onClick={() => {

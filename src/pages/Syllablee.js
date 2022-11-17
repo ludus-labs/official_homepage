@@ -16,6 +16,7 @@ const Syllablee = () => {
         backgroundColor={"#00A68A"}
         color={"white"}
         fontSize={"30px"}
+        marginTop={"5px"}
         marginBottom={"30px"}
         _hover={{ backgroundColor: "#07866F" }}
         onClick={() => {
