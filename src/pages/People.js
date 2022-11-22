@@ -7,7 +7,7 @@ const People = () => {
         <PeopleTitle>저희를 소개합니다</PeopleTitle>
         <PersonBoxContainer>
           <PersonCard
-            path="0.jpeg"
+            path="0.jpg"
             email="contact@glob-up.com"
             name="김철수"
             engName="Charles Kim"
@@ -55,6 +55,13 @@ const People = () => {
             name="윤재원"
             engName="Jay Youn"
             position="개발"
+          />
+          <PersonCard
+            path="7.png"
+            email="contact@glob-up.com"
+            name="황진우"
+            engName=""
+            position="B2G 담당"
           />
         </PersonBoxContainer>
       </PeopleContainer>
