@@ -40,7 +40,9 @@ const Gogo = () => {
         marginBottom={"30px"}
         _hover={{ backgroundColor: "#CE6846" }}
         onClick={() => {
-          alert("App Store 검토 중입니다.\n곧 출시되니 조금만 기다려주세요 :)");
+          window.open(
+            "https://apps.apple.com/us/app/%E3%84%B1/id6444402183?l=ko"
+          );
         }}
       >
         <FaApple size="20" color="white" style={{ marginRight: 5 }} />
