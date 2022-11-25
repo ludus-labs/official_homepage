@@ -3,7 +3,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { Ring } from "react-cssfx-loading";
 import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
-import gogo_pdf_2 from "../assets/pdf/gogo_pdf_2.pdf";
+import gogo_2 from "../assets/images/gogo_2.png";
 import gogo_tutorial_pc_pdf from "../assets/pdf/gogo_tutorial_pc_pdf.pdf";
 import gogo_tutorial_pdf from "../assets/pdf/gogo_tutorial_pdf.pdf";
 import { FaGooglePlay } from "react-icons/fa";
@@ -57,7 +57,6 @@ const Gogo = () => {
           paddingBottom: "45%",
         }}
       >
-        {" "}
         <iframe
           src="https://youtube.com/embed/5K4aFRvrWBc"
           alt="gogo_video"
@@ -66,26 +65,7 @@ const Gogo = () => {
         />
       </div>
       <PDFDocumentWrapper>
-        <Document
-          file={gogo_pdf_2}
-          loading=<div
-            style={{
-              marginTop: "50vh",
-              marginBottom: "50vh",
-              zIndex: "100",
-              alignItems: "center",
-            }}
-          >
-            <Ring color="#E9967A" width="100px" height="100px" duration="1s" />
-          </div>
-        >
-          <Page
-            pageNumber={1}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-        </Document>
+        <img src={gogo_2} alt="gogo_main_image" />
       </PDFDocumentWrapper>
       <PDFDocumentPCWrapper>
         <Document

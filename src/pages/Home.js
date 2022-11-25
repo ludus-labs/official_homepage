@@ -187,13 +187,13 @@ export default function Home() {
                 setTopInView(true);
               }}
             />
-            <GogoContainer
+            {/* <GogoContainer
               onClick={() => {
                 navigate(`/syllablee`);
               }}
             >
               <BannerImg1 src={syllablee_banner} alt="SYLLABLEE" />
-            </GogoContainer>
+            </GogoContainer> */}
             <SyllableeContainer
               onClick={() => {
                 navigate(`/gogo`);
@@ -557,10 +557,10 @@ const SyllableeContainer = styled.div`
 `;
 const KuplaceContainer = styled.div`
   background-color: white;
-  width: 24vw;
-  height: 16vw;
-  max-width: 420px;
-  max-height: 280px;
+  width: 30vw;
+  height: 20vw;
+  max-width: 525px;
+  max-height: 350px;
   border-radius: 20px;
   margin-left: 20px;
   box-shadow: 10px 10px 50px #00000015;
