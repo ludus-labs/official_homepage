@@ -3,9 +3,21 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { Ring } from "react-cssfx-loading";
 import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
-import gogo_2 from "../assets/images/gogo_2.png";
-import gogo_tutorial_pc_pdf from "../assets/pdf/gogo_tutorial_pc_pdf.pdf";
-import gogo_tutorial_pdf from "../assets/pdf/gogo_tutorial_pdf.pdf";
+import gogo_banner from "../assets/images/gogo/gogo_banner.png";
+import tutorial_pc_1 from "../assets/images/gogo/tutorial_pc/tutorial1.png";
+import tutorial_pc_2 from "../assets/images/gogo/tutorial_pc/tutorial2.png";
+import tutorial_pc_3 from "../assets/images/gogo/tutorial_pc/tutorial3.png";
+import tutorial_pc_4 from "../assets/images/gogo/tutorial_pc/tutorial4.png";
+import tutorial_pc_5 from "../assets/images/gogo/tutorial_pc/tutorial5.png";
+import tutorial_pc_6 from "../assets/images/gogo/tutorial_pc/tutorial6.png";
+import tutorial_pc_7 from "../assets/images/gogo/tutorial_pc/tutorial7.png";
+import tutorial_mobile_1 from "../assets/images/gogo/tutorial_mobile/tutorial1.png";
+import tutorial_mobile_2 from "../assets/images/gogo/tutorial_mobile/tutorial2.png";
+import tutorial_mobile_3 from "../assets/images/gogo/tutorial_mobile/tutorial3.png";
+import tutorial_mobile_4 from "../assets/images/gogo/tutorial_mobile/tutorial4.png";
+import tutorial_mobile_5 from "../assets/images/gogo/tutorial_mobile/tutorial5.png";
+import tutorial_mobile_6 from "../assets/images/gogo/tutorial_mobile/tutorial6.png";
+import tutorial_mobile_7 from "../assets/images/gogo/tutorial_mobile/tutorial7.png";
 import { FaGooglePlay } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -65,124 +77,17 @@ const Gogo = () => {
         />
       </div>
       <PDFDocumentWrapper>
-        <img src={gogo_2} alt="gogo_main_image" />
+        <img src={gogo_banner} alt="gogo_pc_image_1" />
       </PDFDocumentWrapper>
-      <PDFDocumentPCWrapper>
-        <Document
-          file={gogo_tutorial_pc_pdf}
-          loading=<div
-            style={{
-              marginTop: "50vh",
-              marginBottom: "50vh",
-              zIndex: "100",
-              alignItems: "center",
-            }}
-          >
-            <Ring color="#E9967A" width="100px" height="100px" duration="1s" />
-          </div>
-        >
-          <Page
-            pageNumber={1}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={2}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={3}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={4}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={5}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={6}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={7}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-        </Document>
-      </PDFDocumentPCWrapper>
-      <PDFDocumentMobileWrapper>
-        <Document
-          file={gogo_tutorial_pdf}
-          loading=<div
-            style={{
-              marginTop: "50vh",
-              marginBottom: "50vh",
-              zIndex: "100",
-              alignItems: "center",
-            }}
-          >
-            <Ring color="#E9967A" width="100px" height="100px" duration="1s" />
-          </div>
-        >
-          <Page
-            pageNumber={1}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={2}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={3}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={4}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={5}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={6}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-          <Page
-            pageNumber={7}
-            renderTextLayer={false}
-            renderAnnotationLayer={false}
-            loading=""
-          />
-        </Document>
-      </PDFDocumentMobileWrapper>
+      <PDFDocumentWrapper>
+        <img src={tutorial_pc_1} alt="gogo_pc_image_1" />
+        <img src={tutorial_pc_2} alt="gogo_pc_image_2" />
+        <img src={tutorial_pc_3} alt="gogo_pc_image_3" />
+        <img src={tutorial_pc_4} alt="gogo_pc_image_4" />
+        <img src={tutorial_pc_5} alt="gogo_pc_image_5" />
+        <img src={tutorial_pc_6} alt="gogo_pc_image_6" />
+        <img src={tutorial_pc_7} alt="gogo_pc_image_7" />
+      </PDFDocumentWrapper>
     </Background>
   );
 };
@@ -211,44 +116,6 @@ const PDFDocumentWrapper = styled.div`
   margin-top: 40px;
   margin-bottom: 20px;
   width: 85%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffe8e0;
-  border-radius: 30px;
-  overflow: hidden;
-  @media screen and (max-width: 768px) {
-    width: 93%;
-  }
-`;
-const PDFDocumentPCWrapper = styled.div`
-  canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-  min-height: 100%;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  width: 85%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #ffe8e0;
-  border-radius: 30px;
-  overflow: hidden;
-  @media screen and (max-width: 768px) {
-    width: 0%;
-    height: 0%;
-  }
-`;
-const PDFDocumentMobileWrapper = styled.div`
-  canvas {
-    width: 100% !important;
-    height: auto !important;
-  }
-  width: 0%;
-  margin-top: 40px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
