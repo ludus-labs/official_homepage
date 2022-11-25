@@ -3,7 +3,9 @@ import { Document, Page, pdfjs } from "react-pdf";
 import { Ring } from "react-cssfx-loading";
 import { Button } from "@chakra-ui/react";
 import styled from "styled-components";
-import gogo_pdf from "../assets/pdf/gogo_pdf.pdf";
+import gogo_pdf_2 from "../assets/pdf/gogo_pdf_2.pdf";
+import gogo_tutorial_pc_pdf from "../assets/pdf/gogo_tutorial_pc_pdf.pdf";
+import gogo_tutorial_pdf from "../assets/pdf/gogo_tutorial_pdf.pdf";
 import { FaGooglePlay } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -65,7 +67,29 @@ const Gogo = () => {
       </div>
       <PDFDocumentWrapper>
         <Document
-          file={gogo_pdf}
+          file={gogo_pdf_2}
+          loading=<div
+            style={{
+              marginTop: "50vh",
+              marginBottom: "50vh",
+              zIndex: "100",
+              alignItems: "center",
+            }}
+          >
+            <Ring color="#E9967A" width="100px" height="100px" duration="1s" />
+          </div>
+        >
+          <Page
+            pageNumber={1}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            loading=""
+          />
+        </Document>
+      </PDFDocumentWrapper>
+      <PDFDocumentPCWrapper>
+        <Document
+          file={gogo_tutorial_pc_pdf}
           loading=<div
             style={{
               marginTop: "50vh",
@@ -89,7 +113,6 @@ const Gogo = () => {
             renderAnnotationLayer={false}
             loading=""
           />
-          <div style={{ height: "100px" }}></div>
           <Page
             pageNumber={3}
             renderTextLayer={false}
@@ -120,20 +143,66 @@ const Gogo = () => {
             renderAnnotationLayer={false}
             loading=""
           />
+        </Document>
+      </PDFDocumentPCWrapper>
+      <PDFDocumentMobileWrapper>
+        <Document
+          file={gogo_tutorial_pdf}
+          loading=<div
+            style={{
+              marginTop: "50vh",
+              marginBottom: "50vh",
+              zIndex: "100",
+              alignItems: "center",
+            }}
+          >
+            <Ring color="#E9967A" width="100px" height="100px" duration="1s" />
+          </div>
+        >
           <Page
-            pageNumber={8}
+            pageNumber={1}
             renderTextLayer={false}
             renderAnnotationLayer={false}
             loading=""
           />
           <Page
-            pageNumber={9}
+            pageNumber={2}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            loading=""
+          />
+          <Page
+            pageNumber={3}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            loading=""
+          />
+          <Page
+            pageNumber={4}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            loading=""
+          />
+          <Page
+            pageNumber={5}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            loading=""
+          />
+          <Page
+            pageNumber={6}
+            renderTextLayer={false}
+            renderAnnotationLayer={false}
+            loading=""
+          />
+          <Page
+            pageNumber={7}
             renderTextLayer={false}
             renderAnnotationLayer={false}
             loading=""
           />
         </Document>
-      </PDFDocumentWrapper>
+      </PDFDocumentMobileWrapper>
     </Background>
   );
 };
@@ -162,6 +231,44 @@ const PDFDocumentWrapper = styled.div`
   margin-top: 40px;
   margin-bottom: 20px;
   width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffe8e0;
+  border-radius: 30px;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: 93%;
+  }
+`;
+const PDFDocumentPCWrapper = styled.div`
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  min-height: 100%;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffe8e0;
+  border-radius: 30px;
+  overflow: hidden;
+  @media screen and (max-width: 768px) {
+    width: 0%;
+    height: 0%;
+  }
+`;
+const PDFDocumentMobileWrapper = styled.div`
+  canvas {
+    width: 100% !important;
+    height: auto !important;
+  }
+  width: 0%;
+  margin-top: 40px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;

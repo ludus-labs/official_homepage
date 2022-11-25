@@ -12,6 +12,7 @@ const People = () => {
             name="김철수"
             engName="Charles Kim"
             position="CEO"
+            school="고려대학교 경영학과"
           />
           <PersonCard
             path="1.jpg"
@@ -19,6 +20,7 @@ const People = () => {
             name="정진욱"
             engName="Jarvis Jeong"
             position="CTO"
+            school="고려대학교 전기전자공학부"
           />
           <PersonCard
             path="2.jpg"
@@ -26,6 +28,7 @@ const People = () => {
             name="강유민"
             engName="Aiden Kang"
             position="개발 / 디자인"
+            school="고려대학교 건축학과"
           />
           <PersonCard
             path="3.jpg"
@@ -33,6 +36,7 @@ const People = () => {
             name="박성준"
             engName="Dominick Park"
             position="기획"
+            school="고려대학교 경영학과"
           />
           <PersonCard
             path="4.jpg"
@@ -40,7 +44,7 @@ const People = () => {
             name="박재현"
             engName="Hazel Park"
             position="기획"
-            description=<p>-고려대학교 경영학과 재학</p>
+            school="고려대학교 경영학과"
           />
           <PersonCard
             path="5.jpg"
@@ -48,6 +52,7 @@ const People = () => {
             name="심하민"
             engName="Zoe Shim"
             position="개발"
+            school="고려대학교 전기전자공학부"
           />
           <PersonCard
             path="6.jpeg"
@@ -55,6 +60,7 @@ const People = () => {
             name="윤재원"
             engName="Jay Youn"
             position="개발"
+            school="고려대학교 전기전자공학부"
           />
           <PersonCard
             path="7.png"
@@ -62,6 +68,7 @@ const People = () => {
             name="황진우"
             engName=""
             position="B2G 담당"
+            school="고려대학교 행정학과"
           />
         </PersonBoxContainer>
       </PeopleContainer>
