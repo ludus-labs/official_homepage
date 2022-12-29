@@ -274,6 +274,9 @@ export default function Home() {
                     <YearText>- 2022.11:</YearText> 링크 KU 창업동아리 지원사업
                     선정
                   </DreamDescription>
+                  <DreamDescription>
+                    <YearText>- 2023.01:</YearText> 고려대 안암동 캠퍼스타운 입주 예정
+                  </DreamDescription>
                 </DreamDescriptionContainer>
               </DreamTextContainer>
             </DreamDiv>
