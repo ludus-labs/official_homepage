@@ -22,9 +22,11 @@ import team_culture from "../assets/images/team_culture.svg";
 import what_is_globup from "../assets/images/what_is_globup.svg";
 import PersonCard from "../components/PersonCard";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/images/new_logo.png";
+
 //just for check..
 
-export default function Home() {
+export default function Firsthome() {
   const navigate = useNavigate();
   const [topInView, setTopInView] = useState(false);
   const [historyInView, setHistoryInView] = useState(false);
@@ -32,156 +34,158 @@ export default function Home() {
   const [productListInView, setProductListInView] = useState(false);
   const [cultureInView, setCultureInView] = useState(false);
   const [peopleInView, setPeopleInView] = useState(false);
-
-  const goToLastHome = ()=>{navigate(`/lasthome`)}
   const isMobile = useMediaQuery({
     query: "(max-width:768px)",
   });
+  const goToHome = ()=>{navigate(`/home`)}
 
-  const mainImageVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 0,
-    to: {
-      opacity: topInView ? 1 : 0,
-    },
-  });
-  const historyContainerVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 0,
-    to: {
-      opacity: historyInView ? 1 : 0,
-      // y: historyInView ? 20 : 0,
-    },
-  });
-  const dreamDivVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 0,
-    to: {
-      opacity: dreamInView ? 1 : 0,
-      // y: historyInView ? 20 : 0,
-    },
-  });
-  const productsTextVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 0,
-    to: {
-      opacity: productListInView ? 1 : 0,
-    },
-  });
-  const tumoleVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 50,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const desdeSeulVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 100,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const tapVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 150,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const dimpleVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 200,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const challengeonVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 250,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const kuplaceVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 300,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const gogoVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 350,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const syllableeVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 400,
-    from: {
-      x: -20,
-    },
-    to: {
-      opacity: productListInView ? 1 : 0,
-      x: productListInView ? 0 : -20,
-    },
-  });
-  const lineVisibleAnimation = useSpring({
-    config: { duration: 300 },
-    delay: 0,
-    to: {
-      opacity: productListInView ? 1 : 0,
-    },
-  });
-  const cultureVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 0,
-    to: {
-      opacity: cultureInView ? 1 : 0,
-    },
-  });
+//   const mainImageVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 0,
+//     to: {
+//       opacity: topInView ? 1 : 0,
+//     },
+//   });
+//   const historyContainerVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 0,
+//     to: {
+//       opacity: historyInView ? 1 : 0,
+//       // y: historyInView ? 20 : 0,
+//     },
+//   });
+//   const dreamDivVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 0,
+//     to: {
+//       opacity: dreamInView ? 1 : 0,
+//       // y: historyInView ? 20 : 0,
+//     },
+//   });
+//   const productsTextVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 0,
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//     },
+//   });
+//   const tumoleVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 50,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const desdeSeulVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 100,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const tapVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 150,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const dimpleVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 200,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const challengeonVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 250,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const kuplaceVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 300,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const gogoVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 350,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const syllableeVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 400,
+//     from: {
+//       x: -20,
+//     },
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//       x: productListInView ? 0 : -20,
+//     },
+//   });
+//   const lineVisibleAnimation = useSpring({
+//     config: { duration: 300 },
+//     delay: 0,
+//     to: {
+//       opacity: productListInView ? 1 : 0,
+//     },
+//   });
+//   const cultureVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 0,
+//     to: {
+//       opacity: cultureInView ? 1 : 0,
+//     },
+//   });
 
-  const peopleVisibleAnimation = useSpring({
-    config: { duration: 500 },
-    delay: 0,
-    to: {
-      opacity: peopleInView ? 1 : 0,
-    },
-  });
+//   const peopleVisibleAnimation = useSpring({
+//     config: { duration: 500 },
+//     delay: 0,
+//     to: {
+//       opacity: peopleInView ? 1 : 0,
+//     },
+//   });
+
 
   return (
     <>
       <Background>
+        <img src={logo} className="logo"/>
+        <Arrow style={{cursor:'pointer'}} onClick={goToHome}>→</Arrow>
         {/* <animated.div style={mainImageVisibleAnimation}> */}
           {/* <Top>
             <Waypoint
@@ -445,7 +449,7 @@ export default function Home() {
           </ProductListContainer>
         </RoadmapContainer> */}
 
-        <animated.div style={cultureVisibleAnimation}>
+        {/* <animated.div style={cultureVisibleAnimation}>
           <TeamCultureContainer>
             <TitleText>팀 문화</TitleText>
             <Waypoint
@@ -461,21 +465,20 @@ export default function Home() {
           {/* <WhatIsContainer>
             <WhatIsImg src={what_is_globup} alt="Team Culture" />
           </WhatIsContainer> */}
-        </animated.div>
+        {/* </animated.div>
 
-        <animated.div style={peopleVisibleAnimation}></animated.div>
-        <Arrow style={{cursor:'pointer'}} onClick={goToLastHome}>→</Arrow>
+        <animated.div style={peopleVisibleAnimation}></animated.div> */} 
       </Background>
     </>
   );
 }
 const Background = styled.div`
   width: 100vw;
-  padding-top: -100vh;
+  padding-top: 30vh;
   padding-bottom: 20vh;
   padding-left: 5vw;
   padding-right: 5vw;
-  background-color: #f6fafd;
+  background-color: #ffffff;
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -658,7 +661,7 @@ const MainImage = styled.img`
   }
 `;
 const TitleText = styled.p`
-  margin-top: -90px;
+  margin-top: -50px;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: 700;

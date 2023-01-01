@@ -39,3 +39,9 @@ h6 {
 .hamburger {
   border-width: 0;
 }
+.logo{
+  width: 600px;
+  align-self: center;
+  justify-content: center;
+}
+
