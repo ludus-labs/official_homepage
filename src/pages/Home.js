@@ -464,7 +464,7 @@ export default function Home() {
         </animated.div>
 
         <animated.div style={peopleVisibleAnimation}></animated.div>
-        <Arrow style={{cursor:'pointer'}} onClick={goToLastHome}>→</Arrow>
+        <Arrow style={{cursor:'pointer'}} onClick={goToLastHome}>{'>'}</Arrow>
       </Background>
     </>
   );

@@ -37,8 +37,8 @@ export default function Lasthome() {
   const isMobile = useMediaQuery({
     query: "(max-width:768px)",
   });
-  const [menuVisible,setMenuVisible] = useState(false);
-  const showMenu = ()=>{setMenuVisible(true)};
+  //const [menuVisible,setMenuVisible] = useState(false);
+  //const showMenu = ()=>{setMenuVisible(true)};
   const [code, setCode] = useState("");
   const onChangeCode = (event) => {setCode(event.target.value)};
 
@@ -188,18 +188,14 @@ export default function Lasthome() {
     <>
       <Background>
         
-        <Arrow style={{cursor:'pointer'}} onClick={showMenu}>시작하기</Arrow>
+        <Arrow style={{cursor:'pointer'}} >시작하기</Arrow>
         <div>
-        {
-            menuVisible === true
-            ? <div style={{textAlign :'center'}}>
+        <div style={{textAlign :'center'}}>
                 <Info style={{marginBottom :"50px"}}>코드를 입력하세요.</Info>
                 <div ></div>
                 <input value={code} autoFocus="true" type="text" onChange={onChangeCode} />
                 
             </div>
-            : null
-        }
         </div>
         
 

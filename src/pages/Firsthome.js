@@ -185,7 +185,7 @@ export default function Firsthome() {
     <>
       <Background>
         <img src={logo} className="logo"/>
-        <Arrow style={{cursor:'pointer'}} onClick={goToHome}>→</Arrow>
+        <Arrow style={{cursor:'pointer'}} onClick={goToHome}>{'>'}</Arrow>
         {/* <animated.div style={mainImageVisibleAnimation}> */}
           {/* <Top>
             <Waypoint
@@ -949,6 +949,7 @@ const Arrow = styled.p`
   margin-top: 10px;
   margin-bottom: 0;
   font-size: 60px;
+  font-stretch:ultra-expanded;
   font-weight: 700;
   color: black;
   text-align: center;
