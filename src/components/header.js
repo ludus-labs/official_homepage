@@ -22,14 +22,14 @@ export default function Header() {
         </Navbar.Toggle>
         <Navbar.Collapse id="basic-navbar-nav">
           <div className="me-auto" />
-          {/* <Nav>
+          <Nav>
             <Nav.Link
               href="/people"
               className={path === "/people" ? "selected" : "not-selected"}
             >
               팀 소개
             </Nav.Link>
-          </Nav> */}
+          </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>

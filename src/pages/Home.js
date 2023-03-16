@@ -283,7 +283,7 @@ export default function Home() {
           </animated.div>
         </HistoryContainer>
 
-        {/* <RoadmapContainer>
+        <RoadmapContainer>
           <animated.div style={productsTextVisibleAnimation}>
             <TitleText>로드맵</TitleText>
             <ProductTopSubText>실패를 두려워하지 않는 팀</ProductTopSubText>
@@ -441,7 +441,7 @@ export default function Home() {
               <Line></Line>
             </animated.div>
           </ProductListContainer>
-        </RoadmapContainer> */}
+        </RoadmapContainer>
 
         <animated.div style={cultureVisibleAnimation}>
           <TeamCultureContainer>
