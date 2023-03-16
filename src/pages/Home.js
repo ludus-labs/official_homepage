@@ -32,8 +32,6 @@ export default function Home() {
   const [productListInView, setProductListInView] = useState(false);
   const [cultureInView, setCultureInView] = useState(false);
   const [peopleInView, setPeopleInView] = useState(false);
-
-  const goToLastHome = ()=>{navigate(`/lasthome`)}
   const isMobile = useMediaQuery({
     query: "(max-width:768px)",
   });
@@ -182,13 +180,13 @@ export default function Home() {
   return (
     <>
       <Background>
-        {/* <animated.div style={mainImageVisibleAnimation}> */}
-          {/* <Top>
+        <animated.div style={mainImageVisibleAnimation}>
+          <Top>
             <Waypoint
               onEnter={() => {
                 setTopInView(true);
               }}
-            /> */}
+            />
             {/* <GogoContainer
               onClick={() => {
                 navigate(`/syllablee`);
@@ -196,21 +194,21 @@ export default function Home() {
             >
               <BannerImg1 src={syllablee_banner} alt="SYLLABLEE" />
             </GogoContainer> */}
-            {/* <SyllableeContainer
+            <SyllableeContainer
               onClick={() => {
                 navigate(`/gogo`);
               }}
             >
               <BannerImg2 src={gogo_banner} alt="GOGO" />
-            </SyllableeContainer> */}
-            {/* <KuplaceContainer
+            </SyllableeContainer>
+            <KuplaceContainer
               onClick={() => {
                 navigate(`/kuplace`);
               }}
             >
               <BannerImg1 src={kuplace_banner} alt="KUplace" />
-            </KuplaceContainer> */}
-          {/* </Top>
+            </KuplaceContainer>
+          </Top>
           <MouseContainer>
             <div class="mouse_scroll">
               <div className="mouse">
@@ -223,9 +221,9 @@ export default function Home() {
               </div>
             </div>
           </MouseContainer>
-        </animated.div> */}
+        </animated.div>
 
-        {/* <HistoryContainer>
+        <HistoryContainer>
           <animated.div style={historyContainerVisibleAnimation}>
             <HistoryTitle>Local to Global.</HistoryTitle>
             <SloganText>글로벌 스타트업, GLOB-UP</SloganText>
@@ -283,7 +281,7 @@ export default function Home() {
               </DreamTextContainer>
             </DreamDiv>
           </animated.div>
-        </HistoryContainer> */}
+        </HistoryContainer>
 
         {/* <RoadmapContainer>
           <animated.div style={productsTextVisibleAnimation}>
@@ -458,20 +456,19 @@ export default function Home() {
             />
             <TeamCultureImg src={team_culture} alt="Team Culture" />
           </TeamCultureContainer>
-          {/* <WhatIsContainer>
+          <WhatIsContainer>
             <WhatIsImg src={what_is_globup} alt="Team Culture" />
-          </WhatIsContainer> */}
+          </WhatIsContainer>
         </animated.div>
 
         <animated.div style={peopleVisibleAnimation}></animated.div>
-        <Arrow style={{cursor:'pointer'}} onClick={goToLastHome}>→</Arrow>
       </Background>
     </>
   );
 }
 const Background = styled.div`
   width: 100vw;
-  padding-top: -100vh;
+  padding-top: 20vh;
   padding-bottom: 20vh;
   padding-left: 5vw;
   padding-right: 5vw;
@@ -658,7 +655,7 @@ const MainImage = styled.img`
   }
 `;
 const TitleText = styled.p`
-  margin-top: -90px;
+  margin-top: 50px;
   margin-bottom: 0;
   font-size: 60px;
   font-weight: 700;
@@ -940,17 +937,5 @@ const WhatIsImg = styled.img`
   margin-top: 20px;
   @media screen and (max-width: 768px) {
     width: 70vw;
-  }
-`;
-const Arrow = styled.p`
-  margin-top: 10px;
-  margin-bottom: 0;
-  font-size: 60px;
-  font-weight: 700;
-  color: black;
-  text-align: center;
-  @media screen and (max-width: 768px) {
-    margin-top: 45px;
-    font-size: 35px;
   }
 `;
