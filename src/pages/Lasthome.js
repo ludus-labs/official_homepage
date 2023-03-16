@@ -188,10 +188,10 @@ export default function Lasthome() {
     <>
       <Background>
         
-        <Arrow  >시작하기</Arrow>
+        <Arrow style={{cursor:'pointer'}} >시작하기</Arrow>
         <div>
         <div style={{textAlign :'center'}}>
-                <Info style={{marginBottom :"50px"}}>초대코드를 입력하세요.</Info>
+                <Info style={{marginBottom :"50px"}}>코드를 입력하세요.</Info>
                 <div ></div>
                 <input value={code} autoFocus="true" type="text" onChange={onChangeCode} />
                 

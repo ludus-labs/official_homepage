@@ -447,7 +447,7 @@ export default function Home() {
 
         <animated.div style={cultureVisibleAnimation}>
           <TeamCultureContainer>
-            <TitleText>GLOB-UP 문화</TitleText>
+            <TitleText>팀 문화</TitleText>
             <Waypoint
               onEnter={() => {
                 setCultureInView(true);
